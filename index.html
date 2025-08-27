@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/headers.css">
+  <link rel="stylesheet" href="CSS/footer.css">
+  <link rel="stylesheet" href="CSS/chat.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <!-- 🔹 Modal Form Overlay -->
+  <div id="enquiryModal" class="modal">
+    <form id="enquiryForm" class="form-container" action="http://127.0.0.1:5000/submit" method="POST">
+      <button type="button" class="close-btn" id="closeBtn">&times;</button>
+      <h2>Enquiry Form</h2>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="product" placeholder="Which Product?" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="header-container">
+
+    <!-- Theme and toggles -->
+
+
+    <nav>
+      <div class="logoheader"><img id="img-logo" src="LOGO/new.png" href="index.html">
+  </div>
+      <!-- hidden audio -->
+
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="MAIN/about us.html">ABOUT US</a></li>
+        <li><a href="MAIN/services.html">SERVICES</a></li>
+
+
+        <div class="Dropdown" id="productsDropdowns">
+
+          <li><a href="MAIN/products.html">PRODUCTS</a></li>
+          <div class="dropdown-content">
+
+            <a href="items/capacitor.html">Capacitors</a>
+            <a href="items/mcb.html">Mcb</a>
+     <a href="items/double.html">Doubledoor</a>
+            <a href="items/changeover.html">Changeover</a>
+            <a href="items/switchgear.html">Switchgears</a>
+
+          </div>
+        </div>
+
+
+        <li><a href="MAIN/contact us.html">CONTACT US</a></li>
+      </ul>
+
+      <!-- Right controls -->
+      <div class="nav-right">
+
+
+
+        <label class="search-label" id="searchIcon">&#128269;</label>
+        <label onclick="toggleTheme()" class="theme-label"id="theme-label1">🌓</label>
+        <button id="hamburger" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+      </div>
+    </nav>
+
+
+    <!-- Search Box -->
+
+    <div class="search-box" id="searchBox">
+
+      <input type="text" id="searchInput" placeholder="Type to search (e.g. products, mcb)">
+      <button onclick="searchPage()">Go</button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="index.html">HOME</a>
+      <a href="MAIN/about us.html">ABOUT US</a>
+      <a href="MAIN/services.html">NETWORKS</a>
+      <a href="MAIN/products.html">PRODUCTS</a>
+      <a href="MAIN/contact us.html">CONTACT US</a>
+    </div>
+
+  </div>
+
+  <div class="slider" id="slider">
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/NEW.jpg')">
+        <div class="slide-content">
+          <p>Welcome to</p>
+          <h2>Havron Switchgears</h2>
+          <p>Brighten your surrounding with high-efficieny flood lights. Designed for durability, performance, and
+            widearea coverage</p>
+          <a href="IMAGES/ani1.jpg" target="_blank">
+            <button>Download Brochure</button></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/istockphoto-1459941554-612x612.jpg')">
+        <div class="slide-content">
+          <h2>Smart Solutions</h2>
+          <a href="index.html#alladvertisings">
+            <button>Learn More</button></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/mcb.jpg')">
+        <div class="slide-content">
+          <h2>Global Reach</h2>
+          <a href="MAIN/services.html">
+            <button>Our Network</button></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/capacitor.jpg')">
+        <div class="slide-content">
+          <h2>Trusted by Industry</h2>
+          <a href="MAIN/about us.html#testemonial">
+            <button>Our Clients</button></a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/ai-generated-8799924_1280.jpg')">
+        <div class="slide-content">
+          <h2>Powering the Future</h2>
+          <button>Explore Now</button>
+             <a href="MAIN/products.html"></a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Arrows -->
+    <button class="arrow arrow-left" onclick="prevSlide()">❮</button>
+    <button class="arrow arrow-right" onclick="nextSlide()">❯</button>
+
+    <!-- Dots -->
+    <div class="dots" id="dots"></div>
+  </div>
+
+
+  <div class="products">
+
+    <a href="MAIN/products.html"> <button class="hover-button">
+        OUR PRODUCTS >
+      </button></a>
+
+    <div class="allclickproducts">
+      <div class="productmcb">
+        <button class="mcbs"><a href="items/mcb.html">
+            <img id="cross" src="SVG/items pencil pohoto/mcb.png" alt=""></a>
+        </button>
+        <strong id="productname">MCBs</strong>
+      </div>
+      <div class="productmcb">
+        <button class="mcbs"><a href="items/double.html">
+            <img id="cross" src="SVG/items pencil pohoto/double door.png" alt=""></a>
+        </button>
+        <strong id="productname">Double Door</strong>
+      </div>
+      <div class="productmcb">
+        <button class="mcbs"><a href="items/capacitor.html">
+            <img id="cross" src="SVG/items pencil pohoto/capacitor.png" alt=""></a>
+        </button>
+        <strong id="productname">Capacitors</strong>
+      </div>
+      <div class="productmcb">
+        <button class="mcbs"><a href="items/changeover.html">
+            <img id="cross" src="SVG/items pencil pohoto/changeover.png" alt=""></a>
+        </button>
+        <strong id="productname">Changeover</strong>
+      </div>
+      <div class="productmcb">
+        <button class="mcbs"><a href="items/switchgear.html">
+            <img id="cross" src="SVG/items pencil pohoto/switchgear.png" alt=""></a>
+        </button>
+        <strong id="productname">Switchgears</strong>
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <div class="havron">
+    <img src="IMAGES/photoseeraj/WhatsApp Image 2025-07-08 at 5.23.19 PM (1).jpeg" alt="">
+  </div>
+
+
+  <div class="scroll-container">
+
+    <h1>Why Choose Havron</h1>
+    <p1>At Havron, we go beyond traditional electrical equipment supply—we deliver comprehensive manufacturing
+      capabilities, stringent quality assurance, and dedicated technical support to help electrical contractors and
+      businesses succeed. From custom electrical solutions to expedited delivery, we ensure seamless experiences for
+      our electrical
+      <div class="allboxes">
+        <div class="box">
+          <img src="IMAGES/why choose and why havron/achievement.png" alt="">
+
+          <h1>Quality Assurance</h1>
+          <p>HAVRON has established a rigorous quality control system to ensure optimal configurations and
+            top-tier
+            service for our customers</p>
+        </div>
+
+        <div class="box">
+          <img src="IMAGES/why choose and why havron/storytelling.png" alt="">
+
+          <h1>Experience of industry​</h1>
+          <p> HAVRON technology has advanced international technology, more than 20 national
+            patents. And 15 years of experince in field of electric goods</p>
+        </div>
+        <div class="box">
+          <img src="IMAGES/why choose and why havron/customer-service-agent.png" alt="">
+
+          <h1>Caring After-Sales Support</h1>
+          <p>Our team provides attentive one-on-one support and regular visits for worry-free experiences</p>
+        </div>
+
+        <div class="box">
+          <img src="IMAGES/why choose and why havron/laptop.png" alt="">
+
+          <h1>Custom Solutions</h1>
+          <p>Tailored solutions designed to match industry-specific demands and meet unique customer needs​</p>
+        </div>
+
+        <div class="box">
+          <img src="IMAGES/why choose and why havron/partners.png" alt="">
+
+          <h1>Team Expert</h1>
+          <p>Our team comprises 15 in-house Team experts, supplemented by approximately 10 external units and
+            technical
+            consultants."</p>
+        </div>
+
+        <div class="box">
+          <img src="IMAGES/why choose and why havron//truck.png" alt="">
+
+          <h1>Swift Availability​</h1>
+          <p>State-of-the-art manufacturing, versatile modular products, and a committed expert team guarantee
+            rapid and
+            efficient deliveries</p>
+
+        </div>
+
+
+      </div>
+  </div>
+
+
+  <div class="aboutus">
+    <div class="aboutboxes">
+      <ul>
+        <li><img src="SVG/about us/target.png" alt="">
+          <p>Safe</p>
+        </li>
+        <li><img src="SVG/about us/settings.png" alt="">
+          <p>MODERN</p>
+        </li>
+        <li><img src="SVG/about us/social-care.png" alt="">
+          <p>AFFORDABLE</p>
+        </li>
+        <li><img src="SVG/about us/handshake.png" alt="">
+          <p>RELIABLE</p>
+        </li>
+        <li><img src="SVG/about us/timeline.png" alt="">
+          <p>TIMELINES</p>
+        </li>
+      </ul>
+    </div>
+    <div class="abouttext">
+      <h1>About Us</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima tempora facilis omnis officia culpa ut
+        dolorem sed? Fuga architecto consectetur magni optio illum adipisci aliquid vitae inventore omnis
+        asperiores
+        voluptatibus ipsa rerum dolor aut explicabo suscipit dignissimos sunt eveniet cupiditate, eligendi iusto
+        dicta ipsam velit nam! Eaque error, sint quisquam ex, magnam eos voluptatem odio, autem minus nam veniam
+        aliquam nisi cum deleniti aspernatur eius sequi praesentium dolores! Nam vel beatae exercitationem ipsa
+        ullam eum modi quod nulla sequi animi, eaque atque dolore corporis a impedit saepe tempora molestias
+        perspiciatis voluptas officia tenetur! Molestiae quis laborum corporis repudiandae repellendus vitae aut
+        ducimus perspiciatis doloribus nam incidunt suscipit aperiam dolor minima, harum quia quod voluptatem
+        optio,
+        fugit sequi doloremque officia nostrum, libero repellat! Aut nesciunt velit nisi molestias deserunt
+        soluta
+        debitis suscipit quia ipsam obcaecati animi distinctio delectus ex ullam, recusandae quidem beatae
+        numquam
+        nihil rerum? Ducimus iste enim consequuntur nesciunt provident?<br><br>
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat hic facere sapiente harum accusantium
+        nesciunt nobis, quos delectus voluptatem dolor, porro cupiditate exercitationem voluptatum aperiam,
+        fugit
+        molestiae quis iure labore laborum excepturi alias officiis. Unde quia sequi expedita temporibus
+        pariatur
+        cumque.<br><a href="/MAIN/about us.html"><button id="know-moreabout">Know More</button></a></p>
+    </div>
+  </div>
+
+  <div class="factoryphotos">
+    <h1>OUR FACTORY PHOTOS</h1>
+    <div class="photosouter">
+      <div class="photosfactory">
+        <img src="IMAGES/factory photos/All-Professional-Works-1.jpg" alt="">
+        <img src="IMAGES/factory photos/All-Professional-Works-4.jpg" alt="">
+        <img src="IMAGES/factory photos/All-Professional-Works-3.jpg" alt="">
+        <img src="IMAGES/factory photos/All-Professional-Works-2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="advertising">
+
+    <div class="headadvertising">
+      <h1>Applications </h1>
+      <h2>Electrical Solution for Every Neeed</h2>
+      <p>As a trusted electrical equipment manufacturer, VIOX delivers high-performance electrical solutions designed
+        for residential, commercial, industrial, and renewable energy applications—providing cost savings,
+        operational efficiency, and reliability across diverse industries worldwide.</p>
+    </div>
+    <div class="alladvertising" id="alladvertisings">
+      <div class="adver-tising">
+        <div class="advertising1"
+          style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('IMAGES/why choose and why havron/image-of-the-renewable-energy.jpg'); ">
+          <img src="IMAGES/why choose and why havron/solar-energy.png" alt="">
+
+          <h1>Solar & Renewable Energy Systems</h1>
+          <p>
+            The solar sector relies on specialized DC components for safe high-voltage management and surge
+            protection in photovoltaic systems.</p>
+        </div>
+      </div>
+      <div class="adver-tising">
+        <div class="advertising1"
+          style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('IMAGES/why choose and why havron/potential-threats-automated-factories-Blog-1024x598-1.png'); ">
+          <img src="IMAGES/why choose and why havron/automation.png" alt="">
+
+          <h1>Industrial Manufacturing & Automation</h1>
+          <p>Industrial manufacturing requires robust electrical controls for heavy machinery and automation
+            systems.</p>
+        </div>
+      </div>
+      <div class="adver-tising">
+        <div class="advertising1"
+          style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('IMAGES/why choose and why havron/europe-modern-complex-of-residential-buildings.jpg'); ">
+          <img src="IMAGES/why choose and why havron/building.png" alt="">
+
+          <h1>Commercial & Residential Buildings</h1>
+          <p>Buildings need electrical solutions prioritizing safety and efficiency while meeting codes.</p>
+        </div>
+      </div>
+      <div class="adver-tising">
+        <div class="advertising1"
+          style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('IMAGES/why choose and why havron/shipping-1.jpg'); ">
+          <img src="IMAGES/why choose and why havron/cruise.png" alt="">
+
+          <h1>Marine & Offshore Industries</h1>
+          <p>Marine applications require components withstanding saltwater, humidity, and vibration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-container">
+    <h1>
+      Projects
+    </h1>
+    <div class="tab-buttons">
+      <button onclick="showTab('content1')">Top Residential Products</button>
+      <button onclick="showTab('content2')">Corpporation and Service Sector</button>
+      <button onclick="showTab('content3')">Government</button>
+      <button onclick="showTab('content4')">Builders and Developers</button>
+    </div>
+
+    <div id="content1" class="tab-content active">
+
+      <img src="IMAGES/projects/top residential products/FeatureImage_Best-Residential-Projects-in-Pune-2022-1.jpg" alt="">
+      <img src="IMAGES/projects/top residential products/9e780acf-9f67-41e5-a596-74d7a8983003.jpg" alt="">
+      <img src="IMAGES/projects/top residential products/rg-pleiades-noida-extension-photos-bannernew1.jpg" alt="">
+      <img src="IMAGES/projects/top residential products/residential-project-services-500x500.webp" alt="">
+
+    </div>
+    <div id="content2" class="tab-content">
+      <img src="IMAGES/projects/corporate/1f851187-e8be-4d70-870b-fa4825547353.jpg" alt="">
+      <img src="IMAGES/projects/corporate/1st-global-tourism-investors-summit-1st-global-tourism-investors-submmit.jpg"
+        alt="">
+      <img src="IMAGES/projects/corporate/33a5f717-a46f-420a-be34-b42daa6fd2b5.jpg" alt="">
+      <img src="IMAGES/projects/corporate/4627b0c0-690b-4156-944c-e85646b84568.jpg" alt="">
+      <img src="IMAGES/projects/corporate/9b1e6b11-7319-4d4e-925d-c485931a0d80.png" alt="">
+      <img src="IMAGES/projects/corporate/acf7d927-46c5-4ef6-90ca-f7988a35c9f9.jpg" alt="">
+      <img src="IMAGES/projects/corporate/attachment_54227073.png" alt="">
+      <img src="IMAGES/projects/corporate/attachment_67180554.png" alt="">
+      <img src="IMAGES/projects/corporate/attachment_67571500.jpeg" alt="">
+      <img src="IMAGES/projects/corporate/attachment_67941410.png" alt="">
+      <img src="IMAGES/projects/corporate/icccc.jpg" alt="">
+      <img src="IMAGES/projects/corporate/attachment_84827584.png" alt="">
+    </div>
+    <div id="content3" class="tab-content">
+      <img src="IMAGES/projects/government/aero-india-01.jpg" alt="">
+      <img src="IMAGES/projects/government/dbt-bharat-dbt-bharat-feature-01.jpg" alt="">
+      <img src="IMAGES/projects/government/desh-ka-maha-tyohar-feature.jpg" alt="">
+      <img src="IMAGES/projects/government/Digital-india-black.jpg" alt="">
+      <img src="IMAGES/projects/government/ek-bharat-shreshtha-bharat-ek-bharat-shreshtha-bharat-01.jpg" alt="">
+      <img src="IMAGES/projects/government/india-handlooms-india-handlooms-01.jpg" alt="">
+      <img src="IMAGES/projects/government/integrated-government-online-training.jpg" alt="">
+      <img src="IMAGES/projects/government/karmayogi-bharat-hindi.jpg" alt="">
+      <img src="IMAGES/projects/government/karmayogi-bharat-krm.jpg" alt="">
+      <img src="IMAGES/projects/government/meghalaya-games-meghalaya-games-feature-01-01.jpg" alt="">
+      <img src="IMAGES/projects/government/yuvika-yuvika-feature-img-01.jpg" alt="">
+    </div>
+    <div id="content4" class="tab-content">
+      <img src="IMAGES/projects/builder and developers/36658578_8447785.jpg" alt="">
+      <img src="IMAGES/projects/builder and developers/37576479_8519264.jpg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_103294994.jpeg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_108957822.png" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_133514605.jpeg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_144118621.jpeg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_65005394.jpeg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/attachment_86808868.jpeg" alt="">
+      <img src="IMAGES/projects/builder and developers/attachment_98098024.png" alt="">
+
+      <img src="IMAGES/projects/builder and developers/shoonya-shoonya-zero-pollution-mobility.jpg" alt="">
+
+      <img src="IMAGES/projects/builder and developers/handloom-marks-handloom-marks-01.jpg" alt="">
+      <img src="IMAGES/projects/builder and developers/fb73c68d-a749-4a94-a1e5-2df599cf503c.jpg" alt="">
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <div class="countings">
+    <h1 class="greeting-title">GREETING FROM TEAM HAVRON</h1>
+    <p class="greeting-description">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor molestias excepturi quam distinctio
+      ipsa dolores voluptas libero perspiciatis error laboriosam corporis doloremque aperiam,
+    </p>
+    <div class="counter-container">
+      <div class="counter-item">
+        <h1 class="counter-box" id="counter-box1">0</h1>
+        <h1 class="counter-label">Years in Industry</h1>
+      </div>
+      <div class="counter-item">
+        <h1 class="counter-box" id="counter-box2">0</h1>
+        <h1 class="counter-label">Available in cities</h1>
+      </div>
+      <div class="counter-item">
+        <h1 class="counter-box" id="counter-box3">0</h1>
+        <h1 class="counter-label">Numbers of products</h1>
+      </div>
+      <div class="counter-item">
+        <h1 class="counter-box" id="counter-box4">0</h1>
+        <h1 class="counter-label">Customers Network</h1>
+      </div>
+      <div class="counter-item">
+        <h1 class="counter-box" id="counter-box5">0</h1>
+        <h1 class="counter-label">Dealers Network</h1>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <!-- ✅ Info Banner Section -->
+    <section class="info-banner">
+      <div class="info-content">
+        <h1><a href="index.html"><img src="LOGO/new white 1.png" alt=""></a></h1>
+        <h4>Build in Safety</h4>
+        <p>
+          <strong>HAVRON</strong> manufactures its products to international standards and, therefore, can fully meet
+          the
+          needs of its customers nationally and internationally.
+        </p>
+
+        <!-- Certifications -->
+        <div class="certifications">
+          <img
+            src="LOGO/iso certified/iso-iec-17025-2017-testing-and-calibration-laboratories-certification-services-500x500.jpg"
+            alt="ISO" />
+          <img src="LOGO/iso certified/aawnnnlt1.webp" alt="ISI" />
+          <img src="LOGO/iso certified/ISO 17025-01.png" alt="CE" />
+
+        </div>
+        <div class="years">
+          <!-- 20 Years Badge -->
+          <div class="years-badge">
+            <img
+              src="LOGO/iso certified/kisspng-lapel-pin-brand-logo-years-of-service-5b0f3e6e795522.814165161527725678497.jpg"
+              alt="20 Years" />
+            <p>Of Delivering Electrical Excellence</p>
+          </div>
+          <div class="contacts">
+            <h1>Contact Us</h1>
+            <div class="row">
+
+              <!-- Instagram -> apna path yahan -->
+              <a class="btn ig" href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener">
+                <span>IG</span>
+              </a>
+
+              <!-- Facebook -> apna path yahan -->
+              <a class="btn fb" href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">
+                <span>FB</span>
+              </a>
+
+              <!-- Twitter/X -> apna path yahan -->
+              <a class="btn tw" href="https://x.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener">
+                <span>X</span>
+              </a>
+
+              <!-- WhatsApp -> click par number copy + alert -->
+              <button class="btn wa" id="waCopy" type="button">
+                <span>WA</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Footer Section -->
+
+    <div class="footer-container">
+
+      <!-- Products -->
+      <div class="footer-box" id="fotter-box1">
+        <h3>Products</h3>
+
+        <ul>
+          <li><a href="items/mcb.html"><i class="fas fa-arrow-right"></i> MINIATURE CIRCUIT BREAKER (MCB)</a></li>
+          <li><a href="items/double.html"><i class="fas fa-arrow-right"></i>DISTRIBUTION BOARDS (DBs)</a>
+          </li>
+          <li><a href="items/capacitor.html"><i class="fas fa-arrow-right"></i> CAPACITORS (MOTORS, FANS,
+              SUMBERSAWEL)</a></li>
+          <li><a href="items/changeover.html"><i class="fas fa-arrow-right"></i>OFF LOAD
+              CHANGEOVER (CO)</a> </li>
+          <li><a href="MAIN/products.html"><i class="fas fa-arrow-right"></i> View All</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-box" id="fotter-box2">
+        <h3>Quick Links</h3>
+        <ul>
+          <li> <a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="MAIN/about us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="MAIN/about us.html"><i class="fas fa-blog"></i> Blogs</a></li>
+          <li><a href="MAIN/products.html"><i class="fas fa-users"></i> Products</a></li>
+          <li><a href="items/mcb.html"><i class="fas fa-book"></i> MCB FAQs</a></li>
+          <li><a href="MAIN/services.html"><i class="fas fa-map-marker-alt"></i> Network</a></li>
+          <li><a href="MAIN/contact us.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location -->
+      <div class="footer-box" id="fotter-box3">
+        <h3>We are here!</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13763.04251776012!2d76.7954079!3d30.8913215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f944d6bba2d7f%3A0x2f51448f727ed452!2sAxiom%20Controls%20Private%20Limited!5e0!3m2!1sen!2sin!4v1693844750930!5m2!1sen!2sin"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>
+        Copyright © 2025
+        <span>HAVRON Controls Pvt. Ltd.</span> All Rights Reserved |
+        Designed & Managed by <span>Virtual Pebbles</span>
+      </p>
+    </div>
+
+
+  </footer>
+ <!-- Floating WhatsApp-style icon -->
+<!-- Floating WhatsApp Icon -->
+<div class="wa-float" id="waToggle" title="Chat with us">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+
+  <!-- Chat container -->
+  <div class="chat-container" id="chatPanel" aria-hidden="true">
+    <div class="chat-top">
+      <img src="IMAGES/sliderimages/network-and-Infra.jpg" alt=""
+        style="width:44px;height:44px;border-radius:8px;background:var(--glass)" />
+      <div>
+        <div class="title">Customer Support</div>
+        <div class="status" id="botStatus">Usually replies within a minute</div>
+      </div>
+      <button class="close-btn" id="closeChat" aria-label="Close chat">✕</button>
+    </div>
+
+    <div class="messages" id="messages" role="log" aria-live="polite"></div>
+
+    <div class="quick-links" id="quickLinks">
+      <button data-q="products">Products</button>
+      <button data-q="about">About</button>
+      <button data-q="contact">Contact</button>
+      <button data-q="pricing">Pricing</button>
+      <button data-q="hours">Hours</button>
+    </div>
+
+    <div class="composer">
+      <input id="userInput" type="text" placeholder="Type a message or ask something..." aria-label="Message input" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Enquiry panel -->
+  <div class="enquiry-panel" id="enquiryPanel">
+    <div class="head">Enquiry Form
+      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
+    </div>
+
+    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email (optional)" required />
+      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+  <script src="JS/chat.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/header.js"></script>
+
+
+
+</body>
+
+</html>

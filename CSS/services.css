@@ -1,0 +1,286 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+   
+   
+      width: 100%;
+    }
+
+    .headcontainer{
+      width: 100%;
+ 
+    
+    }
+
+    .network {
+      background-image:image-set("/IMAGES/hands.png");
+      background-position: center;
+      color: white;
+      padding: 20px 10px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width:100%;
+      height: 250px;
+display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 70px;
+    }
+
+    body.dark .network{
+      color:black
+    }
+
+    .network h1{
+      font-size: 48px;
+      font-weight: 700;
+     margin: 20px 10px;
+    }
+
+      .network p{
+      font-size: 28px;
+ margin: 10px 10px;
+   
+    }
+    .container {
+    width: 100%;
+     height: 100%;
+
+     
+    
+    
+      
+    }
+
+    .inquiry{
+      width: 100%;
+  
+      
+    }
+
+    .inquiry h2{
+      font-size: 32px;
+      margin: 20px 0px 24px 20px;
+    }
+    .inquiry p{
+      font-size: 20px;
+      margin: 10px 60px;
+    } 
+   
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      display: flex;
+          flex-direction: column;
+    align-items: center;
+    
+    }
+
+    .table h2{
+       font-size: 30px;
+      margin: 24px 0px 24px 0px;
+    }
+  
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+      width: 20%;
+    }
+    th {
+      background-color: #eeeeee;
+    }
+
+   
+
+    .heading {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin: 30px;
+    
+    }
+
+    .partners {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 0px 50px;
+    }
+
+    .box {
+      background:rgb(238, 247, 251);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #555;
+    }
+   
+ 
+    .map-placeholder {
+    
+     height: 100%;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    color:black;
+   
+    margin-bottom: 30px;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    }
+    .map-placeholder h2{
+ font-size: 25px;
+ margin: 50px;
+    }
+
+
+
+    .map-placeholder img{
+      width: 60%;
+      height: 80%;
+          
+    }
+
+ .countings {
+  text-align: center;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.countings h1{
+  font-size: 35px;
+  font-weight: 700;
+}
+.countings p{
+font-size: 20px;
+font-weight: 300;
+margin: 10px 100px;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px;
+  flex-wrap: wrap;
+  /* Makes it responsive */
+  gap: 30px;
+}
+
+.counter-item {
+  min-width: 150px;
+}
+.counter-item h1 {
+ 
+  font-size: 25px;
+  margin: 20px;
+  font-weight: 700;
+}
+
+.counter-box {
+  font-size: 40px;
+  color: #333;
+}
+
+.counter-label {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.connection{
+  padding: 40px;
+  display: flex
+;
+background-color: #e1d3d3;
+    flex-direction: column;
+    align-items: center;
+}
+
+.connection h1{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.connection p{
+  font-size: 25px;
+}
+    .cta {
+      background-color: #0d47a1;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+ 
+
+@media screen and (max-width: 767px) {
+
+   .network h1 {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 6px 10px;}
+
+    .network p {
+    font-size: 23px;
+    margin: 10px 10px;
+}
+
+.inquiry h2 {
+    font-size: 30px;
+    margin: 17px 0px 24px 1px;
+}
+.inquiry p {
+    font-size: 17px;
+    margin: 5px 2px 0px 42px;
+}
+.table h2 {
+    font-size: 26px;
+    margin: 24px 0px 24px 0px;
+}
+.heading {
+
+    font-size: 27px;}
+
+    .map-placeholder h2{
+ font-size: 23px;
+ margin: 40px 20px 10px 0px;
+    }
+
+.countings h1 {
+    font-size: 29px;
+    font-weight: 700;
+}
+.countings p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 15px;
+}
+    }

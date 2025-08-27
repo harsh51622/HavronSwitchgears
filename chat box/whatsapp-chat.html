@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhatsApp-style Chat Widget (Responsive)</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+  <!-- Floating WhatsApp-style icon -->
+<!-- Floating WhatsApp Icon -->
+<div class="wa-float" id="waToggle" title="Chat with us">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+
+  <!-- Chat container -->
+  <div class="chat-container" id="chatPanel" aria-hidden="true">
+    <div class="chat-top">
+      <img src="/IMAGES/sliderimages/network-and-Infra.jpg" alt=""
+        style="width:44px;height:44px;border-radius:8px;background:var(--glass)" />
+      <div>
+        <div class="title">Customer Support</div>
+        <div class="status" id="botStatus">Usually replies within a minute</div>
+      </div>
+      <button class="close-btn" id="closeChat" aria-label="Close chat">✕</button>
+    </div>
+
+    <div class="messages" id="messages" role="log" aria-live="polite"></div>
+
+    <div class="quick-links" id="quickLinks">
+      <button data-q="products">Products</button>
+      <button data-q="about">About</button>
+      <button data-q="contact">Contact</button>
+      <button data-q="pricing">Pricing</button>
+      <button data-q="hours">Hours</button>
+    </div>
+
+    <div class="composer">
+      <input id="userInput" type="text" placeholder="Type a message or ask something..." aria-label="Message input" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Enquiry panel -->
+  <div class="enquiry-panel" id="enquiryPanel">
+    <div class="head">Enquiry Form
+      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
+    </div>
+
+    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email (optional)" required />
+      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+
+  <script src="chat.js">
+
+  </script>
+</body>
+
+</html>

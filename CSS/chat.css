@@ -1,0 +1,407 @@
+  /* Basic resets */
+  * {
+    box-sizing: border-box;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif
+  }
+
+  :root {
+    --accent: #25D366;
+    --bg: #0b0b0b;
+    --panel: #ffffff;
+    --muted: #6b7280;
+    --glass: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Floating icon */
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;  /* WhatsApp green */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.wa-float i {
+  font-size: 32px;
+  color: #fff;
+}
+
+
+  /* Chat panel */
+  .chat-container {
+    position: fixed;
+    right: 20px;
+    bottom: 96px;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    height: 500px;
+    max-height: 80vh;
+    background: var(--panel);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1199;
+   
+  }
+
+  /* Header */
+  .chat-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(90deg, #f8fdf9, #f3fff5);
+  }
+
+  .chat-top .title {
+    font-weight: 700;
+    font-size: 15px
+  }
+
+  .chat-top .status {
+    font-size: 12px;
+    color: var(--muted)
+  }
+
+  .chat-top .close-btn {
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--muted)
+  }
+
+  /* Messages area */
+  .messages {
+    padding: 14px;
+    overflow: auto;
+    background: linear-gradient(180deg, #f7faf8, #fff);
+    flex: 1;
+  }
+
+  .msg {
+    margin-bottom: 12px;
+    display: flex
+  }
+
+  .msg.bot .bubble {
+    background: #f1f1f1;
+    color: #111;
+    border-radius: 12px 12px 12px 4px;
+    padding: 10px 12px;
+    max-width: 78%;
+  }
+
+  .msg.user {
+    justify-content: flex-end
+  }
+
+  .msg.user .bubble {
+    background: linear-gradient(180deg, var(--accent), #1aa054);
+    color: white;
+    border-radius: 12px 12px 4px 12px;
+    padding: 10px 12px;
+    max-width: 78%;
+  }
+
+  .time {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px
+  }
+
+  /* Quick links block */
+  .quick-links {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid #eee;
+    background: linear-gradient(90deg, #fff, #fbfffb);
+    flex-wrap: wrap;
+  }
+
+  .quick-links button {
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid #e6f5ec;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    color: #111
+  }
+
+  /* Input area */
+  .composer {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background: linear-gradient(90deg, #fff, #fbfffb);
+  }
+
+  .composer input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid #e6e6e6;
+    outline: none;
+    font-size: 14px;
+  }
+
+  .composer button {
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    font-weight: 600
+  }
+
+  /*
+   Enquiry Form Styles
+   ========================== */
+
+  .enquiry-panel {
+    position: fixed;
+    right: calc(20px + 380px);
+    bottom: 96px;
+    width: 320px;
+    max-width: calc(100% - 40px);
+    border-radius: 12px;
+    background: var(--panel);
+    color: #111;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    z-index: 999999;
+    display: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .enquiry-panel .head {
+    padding: 14px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 1px solid #e3e3e3;
+    background: linear-gradient(90deg, #f8f8f8, #fdfdfd);
+  }
+
+  .enquiry-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .enquiry-panel input,
+  .enquiry-panel textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    background: #fff;
+  }
+
+  .enquiry-panel input:focus,
+  .enquiry-panel textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+  }
+
+  .enquiry-panel textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+  }
+
+  .enquiry-panel button[type="submit"] {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .enquiry-panel button[type="submit"]:hover {
+    background: #1aa054;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .enquiry-close {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    float: right;
+    margin-top: -2px;
+    margin-right: -2px;
+    transition: color 0.2s ease;
+  }
+
+  .enquiry-close:hover {
+    color: red;
+  }
+
+
+
+
+  /* ==========================
+   Dark Mode Overrides
+   ========================== */
+
+  body.dark .enquiry-panel {
+    background: #1e1e1e;
+    color: #fff;
+  }
+
+  body.dark .enquiry-panel .head {
+    background: linear-gradient(90deg, #2a2a2a, #1e1e1e);
+    border-bottom: 1px solid #333;
+  }
+
+  body.dark .enquiry-panel input,
+  body.dark .enquiry-panel textarea {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+  }
+
+  body.dark .enquiry-panel input:focus,
+  body.dark .enquiry-panel textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+  }
+
+  body.dark .enquiry-close {
+    color: #aaa;
+  }
+
+  body.dark .enquiry-close:hover {
+    color: #ff4c4c;
+  }
+
+  /* ==========================
+   Responsive Mobile Position
+   ========================== */
+
+  @media (max-width: 520px) {
+    .enquiry-panel {
+      right: 12px !important;
+      left: 12px;
+      bottom: 12px;
+      width: calc(100% - 24px) !important;
+      border-radius: 12px;
+      z-index: 1201;
+    }
+  }
+
+
+  /* subtle scrollbar */
+  .messages::-webkit-scrollbar {
+    width: 8px
+  }
+
+  .messages::-webkit-scrollbar-thumb {
+    background: linear-gradient(#d0d7d8, #b9c3c4);
+    border-radius: 999px
+  }
+
+  /* Dark mode */
+  body.dark {
+    --bg: #0e0e0e;
+    --panel: #1c1c1c;
+    --muted: #aaa;
+    --glass: rgba(255, 255, 255, 0.06);
+  }
+
+  /* Dark mode overrides */
+  body.dark .chat-container {
+    background: var(--panel);
+    color: #f1f1f1;
+  }
+
+  body.dark .chat-top {
+    background: linear-gradient(90deg, #1e1e1e, #2a2a2a);
+    border-bottom: 1px solid #333;
+  }
+
+  body.dark .chat-top .title,
+  body.dark .chat-top .status,
+  body.dark .chat-top .close-btn {
+    color: #eee;
+  }
+
+  body.dark .messages {
+    background: linear-gradient(180deg, #181818, #202020);
+  }
+
+  body.dark .msg.bot .bubble {
+    background: #2a2a2a;
+    color: #f1f1f1;
+  }
+
+  body.dark .msg.user .bubble {
+    background: linear-gradient(180deg, var(--accent), #1aa054);
+    color: white;
+  }
+
+  body.dark .quick-links {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+    border-top: 1px solid #333;
+  }
+
+  body.dark .quick-links button {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+  }
+
+  body.dark .composer {
+    background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+    border-top: 1px solid #333;
+  }
+
+  body.dark .composer input {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  body.dark .enquiry-panel {
+    background: #1e1e1e;
+    color: #fff;
+  }
+
+  body.dark .enquiry-panel input,
+  body.dark .enquiry-panel textarea {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+  }
+
+  body.dark .enquiry-panel .head {
+    border-bottom: 1px solid #333;
+  }
+
+  body.dark .time {
+    color: #999;
+  }

@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Door</title>
+
+    <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/CSS/headers.css">
+  <link rel="stylesheet" href="/CSS/footer.css">
+  <link rel="stylesheet" href="/CSS/chat.css">
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 45px;
+      margin-top: 15px;
+    }
+
+    /* Container for Slider + Content */
+    .slider-content-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 30px;
+      flex-wrap: nowrap;
+    }
+
+    .main-slider {
+      width: 50%;
+    }
+
+    .swiper {
+      width: 50%;
+      height: 600px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 230px;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+
+    .rightdetails {
+      width: 95%;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    .rightdetails h3 {
+      font-size: 25px;
+      font-weight: bold;
+      margin: 20px 5px;
+    }
+
+    .rightdetails ul li {
+      font-size: 20px;
+      margin: 20px 0;
+      list-style: none;
+    }
+
+    /* Popup gallery */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+    }
+
+    .popup .swiper {
+      height: 100%;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .product-images {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .product-images img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-info {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: #e63946;
+      font-weight: bold;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    .stock {
+      color: green;
+      font-weight: bold;
+      margin: 10px;
+    }
+
+    .offers {
+      background: #fff7e6;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .offers i {
+      color: #ff9900;
+      margin-right: 5px;
+    }
+
+    .ratings {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .details,
+    .reviews,
+    .related {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .related-products {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .related-products div {
+      flex: 0 0 auto;
+      width: 150px;
+      text-align: center;
+    }
+
+    .related-products img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+
+
+
+    .reviews-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      border: 1px solid whitesmoke;
+    background-color: #afa7a7;
+    }
+
+    .reviews-card p {
+      font-size: 22px;
+      margin: 15px 0px;
+    }
+
+    .reviews-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .reviews-user div {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .reviews-user img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+
+    div strong {
+      font-size: 28px;
+    }
+
+    div small {
+      font-size: 17px;
+      margin-top: 10px;
+    }
+
+    .reviews-rating {
+      color: gold;
+      font-size: 25px;
+      margin: 15px 0px;
+    }
+
+    .scroll-container {
+      text-align: center;
+      padding: 10px
+    }
+
+    .allboxes {
+      gap: 16px;
+      padding: 30px 10px;
+      display: flex;
+
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+
+    }
+
+
+
+
+    .box {
+      background-color: #f7e9e9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      width: 400px;
+      margin: 10px;
+    }
+
+    .box h1 {
+      font-size: 30px;
+      margin: 18px;
+    }
+
+    .box img {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+    }
+
+
+    .desktop-only {
+      display: none;
+    }
+
+    .relatedproducts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .relatedproducts a img {
+      width: 390px;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 25px;
+    }
+
+    .relatedproducts a p {
+      text-align: center;
+      font-size: 22px;
+      margin: 15px 0px;
+      font-weight: 700;
+    }
+
+    
+/* 🔹 Enquiry Form Modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 99999999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+}
+
+input,
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:hover {
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
+
+    /* Responsive for Mobile */
+    @media (max-width: 768px) {
+      .slider-content-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .main-slider,
+      .rightdetails {
+        width: 100%;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+
+      .swiper {
+        width: 100%;
+        height: auto;
+      }
+
+      .rightdetails {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+
+      .rightdetails h3 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .rightdetails ul li {
+        font-size: 16px;
+        margin: 12px 0;
+        list-style: none;
+      }
+
+
+      .reviews-card {
+        background: #fff;
+        padding: 0px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 0;
+        text-align: left;
+      }
+
+      .reviews-user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        width: 100%;
+        
+      }
+
+      .reviews-user img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+
+      .reviews-rating {
+        color: gold;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .scroll-container {
+        text-align: center;
+        padding: 10px
+      }
+
+    
+
+      .allboxes {
+          gap: 0px;
+      padding: 0px 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+              align-items:normal;
+              width: 100%;
+      }
+
+      .allboxes::-webkit-scrollbar {
+        display: none;
+      }
+
+      .allboxes {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .box {
+        flex: 1 1 calc(33.33% - 16px);
+        width: 100%;
+        text-align: center;
+      padding: 10px;
+        margin: 10px
+      }
+
+      .box strong{
+        font-size: 20px;
+        width: 140px;
+      }
+
+      .box h1 {
+        font-size: 22px;
+        margin: 5px;
+      }
+
+      .box p {
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      .box:hover {
+        transform: translateY(-10px);
+      }
+
+      .relatedproducts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .relatedproducts a img {
+        width: 156px;
+        height: 160px;
+      }
+.relatedproducts a p{
+  font-size: 15px;
+  margin: 0px;
+}
+ 
+}
+
+    
+  </style>
+</head>
+
+<body>
+    <div class="header-container">
+
+    <!-- Theme and toggles -->
+ 
+
+    <nav>
+      <div class="logoheader"><img id="img-logo" src="../LOGO/new.png" href="../index.html"></div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="../MAIN/about us.html">ABOUT US</a></li>
+        <li><a href="../MAIN/services.html">SERVICES</a></li>
+
+
+        <div class="Dropdown" id="productsDropdowns">
+
+          <li><a href="../MAIN/products.html">PRODUCTS</a></li>
+          <div class="dropdown-content">
+
+            <a href="capacitor.html">Capacitors</a>
+            <a href="mcb.html">Mcb</a>
+            <a href="double.html">Doubledoor</a>
+            <a href="changeover.html">Changeover</a>
+            <a href="switchgear.html">Switchgears</a>
+
+          </div>
+        </div>
+
+
+        <li><a href="../MAIN/contact us.html">CONTACT US</a></li>
+      </ul>
+
+      <!-- Right controls -->
+      <div class="nav-right">
+       
+
+   
+        <label class="search-label" id="searchIcon">&#128269;</label>
+        <label onclick="toggleTheme()" class="theme-label">🌓</label>
+        <button id="hamburger" class="hamburger">
+          <span></span>
+           <span></span>
+            <span></span>
+
+        </button>
+    </div>
+      </div>
+
+      <!-- Search Box -->
+
+      <div class="search-box" id="searchBox">
+
+        <input type="text" id="searchInput" placeholder="Type to search (e.g. products, mcb)">
+        <button onclick="searchPage()">Go</button>
+
+      </div>
+
+        <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+ <a href="../index.html">HOME</a>
+      <a href="../MAIN/about us.html">ABOUT US</a>
+     <a href="../MAIN/services.html">NETWORKS</a>
+     <a href="../MAIN/products.html">PRODUCTS</a>
+      <a href="../MAIN/contact us.html">CONTACT US</a>
+    </div>
+
+
+  <div style="padding:10px;font-size:14px; margin-top: 80px">
+    <a href="../index.html" style="color:#0073e6;text-decoration:none;">Home</a> &gt;
+    <a href="../MAIN/products.html" style="color:#0073e6;text-decoration:none;">Products</a> &gt;
+    <span>Switchgears Panel</span>
+  </div>
+
+  <h1>SwitchGears Panel</h1>
+
+  <div class="slider-content-container">
+    <!-- Slider -->
+    <div class="swiper main-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../IMAGES/items/10-way-double-door-mcb-box-500x500.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box-500x500 (1).jpg" alt="Slide 2">
+        </div>
+        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box.jpg" alt="Slide 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+
+      <div class="product-info">
+
+        <div class="ratings">
+          ★★★★☆ (1080 reviews)
+        </div>
+        <p class="price">₹1,499 <span class="old-price">₹2,999</span></p>
+        <p class="stock">In Stock</p>
+        <button onclick="openForm()"
+          style="padding:10px 20px;background:#007BFF;color:white;border:none;border-radius:5px;">Enquiry</button>
+
+        <!-- Popup Form -->
+        <div id="enquiryForm"
+          style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;">
+         
+
+      
+  <div id="enquiryModal" class="modal">
+    <form id="enquiryForm" class="form-container" action="http://127.0.0.1:5000/submit" method="POST">
+      <button type="button" class="close-btn" id="closeBtn"onclick="closeForm()">&times;</button>
+      <h2>Enquiry Form</h2>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="product" placeholder="Which Product?" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+          
+        </div>
+
+      </div>
+
+
+      <!-- Content -->
+      <div class="rightdetails">
+        <h3>USP’s</h3>
+        <ul>
+  <li>● Standard: IEC60898-1</li>
+            <li>● Type of trip: Thermo-magnetic</li>
+            <li>● Rated current: 1~63A</li>
+            <li>● Rated voltage: 230/400V~240/415V</li>
+            <li>● Number of poles: 1P,2P,3P,4P,1P+N,3P+N</li>
+            <li>● Rated short-circuit breaking capacity: 6kA</li>
+            <li>● Tripping curve: B, C, D</li>
+            <li>● Ambient air temperature: -25...+40 ºC</li>
+            <li>● Connection: From top and bottom</li>
+            <li>● Certificates: CB, CE, UKCA, Inmetro</li></ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="scroll-container">
+<h2 style="text-align:center;margin-bottom:20px;">Customer Reviews</h2>
+      <div class="allboxes">
+        <div class="box">
+          <div class="reviews-card">
+            <div class="reviews-user">
+              <img src="https://i.pravatar.cc/60?img=3" alt="User" />
+              <div>
+                <strong>Rahul Sharma</strong>
+                <small>ID: #10234</small>
+              </div>
+            </div>
+            <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
+            <p>"Bohot acha product, quality best hai!"</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="reviews-card">
+            <div class="reviews-user">
+              <img src="https://i.pravatar.cc/60?img=2" alt="User" />
+              <div>
+                <strong>Priya Gupta</strong>
+                <small>ID: #10235</small>
+              </div>
+            </div>
+            <div class="reviews-rating">⭐⭐⭐⭐</div>
+            <p>"Sound quality awesome, battery backup bhi mast!"</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="reviews-card">
+            <div class="reviews-user">
+              <img src="https://i.pravatar.cc/60?img=3" alt="User" />
+              <div>
+                <strong>Ankit Verma</strong>
+                <small>ID: #10236</small>
+              </div>
+            </div>
+            <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
+            <p>"Fast delivery and packaging safe tha."</p>
+          </div>
+        </div>
+      </div>
+
+     
+
+
+  </div>
+  </div>
+
+
+  <!-- Related Products -->
+  <!-- Related Products Section -->
+  <section style="margin-top:40px;">
+    <h2 style="margin-bottom:20px; text-align: center;">Related Products</h2>
+    <div class="relatedproducts">
+
+      <!-- Product 1 -->
+      <a href="mcb.html" style="text-decoration:none;color:black;text-align:center;">
+        <img src="../IMAGES/items/new/IMG_6622.JPG" alt="Headphone 1">
+        <p >MCBs</p>
+      </a>
+
+      <!-- Product 2 -->
+      <a href="capacitor.html" style="text-decoration:none;color:black;text-align:center;">
+        <img src="../IMAGES/items/new/IMG_6624.JPG" alt="Headphone 2">
+        <p>CAPACITORS</p>
+      </a>
+
+      <!-- Product 3 -->
+      <a href="changeover.html" style="text-decoration:none;color:black;text-align:center;">
+        <img src="../IMAGES/items/rewirable-switch-fuse-unit.jpg" alt="Headphone 3">
+        <p>MAINSWITCH</p>
+      </a>
+
+    </div>
+  </section>
+  </div>
+
+
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <span class="popup-close" id="popupClose">&times;</span>
+    <div class="swiper popup-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../IMAGES/items/10-way-double-door-mcb-box-500x500.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box-500x500 (1).jpg" alt="Slide 2">
+        </div>
+        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box.jpg" alt="Slide 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+     <footer>
+  <!-- ✅ Info Banner Section -->
+  <section class="info-banner">
+    <div class="info-content">
+      <h1><a href="../index.html"><img src="../LOGO/new white 1.png" alt=""></a></h1>
+      <h4>Build in Safety</h4>
+      <p>
+        <strong>HAVRON</strong> manufactures its products to international standards and, therefore, can fully meet the
+        needs of its customers nationally and internationally.
+      </p>
+
+      <!-- Certifications -->
+      <div class="certifications">
+        <img src="../LOGO/iso certified/iso-iec-17025-2017-testing-and-calibration-laboratories-certification-services-500x500.jpg" alt="ISO" />
+         <img src="../LOGO/iso certified/aawnnnlt1.webp" alt="ISI" />
+        <img src="../LOGO/iso certified/ISO 17025-01.png" alt="CE" />
+       
+      </div>
+  <div class="years">
+      <!-- 20 Years Badge -->
+      <div class="years-badge">
+        <img src="../LOGO/iso certified/kisspng-lapel-pin-brand-logo-years-of-service-5b0f3e6e795522.814165161527725678497.jpg" alt="20 Years" />
+       <p>Of Delivering Electrical Excellence</p>
+      </div>
+<div class="contacts">
+  <h1>Contact Us</h1>
+          <div class="row">
+            
+  <!-- Instagram -> apna path yahan -->
+  <a class="btn ig" href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener">
+    <span>IG</span>
+  </a>
+
+  <!-- Facebook -> apna path yahan -->
+  <a class="btn fb" href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">
+    <span>FB</span>
+  </a>
+
+  <!-- Twitter/X -> apna path yahan -->
+  <a class="btn tw" href="https://x.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener">
+    <span>X</span>
+  </a>
+
+  <!-- WhatsApp -> click par number copy + alert -->
+  <button class="btn wa" id="waCopy" type="button">
+    <span>WA</span>
+  </button>
+</div>
+</div>
+       
+      </div>
+  </div>
+  </section>
+
+  <!-- ✅ Footer Section -->
+
+    <div class="footer-container">
+
+      <!-- Products -->
+      <div class="footer-box" id="fotter-box1">
+        <h3>Products</h3>
+
+        <ul>
+          <li><a href="mcb.html"> MINIATURE CIRCUIT BREAKER (MCB)</a></li>
+          <li><a href="double.html"><i class="fas fa-arrow-right"></i>DISTRIBUTION BOARDS (DBs)</a> </li>
+          <li><a href="capacitor.html"><i class="fas fa-arrow-right"></i> CAPACITORS (MOTORS, FANS, SUMBERSAWEL)</a></li>
+          <li><a href="changeover.html"><i class="fas fa-arrow-right"></i>OFF LOAD CHANGEOVER (CO)</a> </li>
+          <li><a href="../MAIN/products.html"><i class="fas fa-arrow-right"></i> View All</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-box" id="fotter-box2">
+        <h3>Quick Links</h3>
+        <ul>
+         <li> <a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="../MAIN/about us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="../MAIN/about us.html"><i class="fas fa-blog"></i> Blogs</a></li>
+          <li><a href="../MAIN/products.html"><i class="fas fa-users"></i> Products</a></li>
+          <li><a href="../items/mcb.html"><i class="fas fa-book"></i> MCB FAQs</a></li>
+          <li><a href="../MAIN/services.html"><i class="fas fa-map-marker-alt"></i> Network</a></li>
+          <li><a href="../MAIN/contact us.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Location -->
+      <div class="footer-box"id="fotter-box3">
+        <h3>We are here!</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13763.04251776012!2d76.7954079!3d30.8913215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f944d6bba2d7f%3A0x2f51448f727ed452!2sAxiom%20Controls%20Private%20Limited!5e0!3m2!1sen!2sin!4v1693844750930!5m2!1sen!2sin"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+ 
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>
+        Copyright © 2025
+        <span>HAVRON Controls Pvt. Ltd.</span> All Rights Reserved |
+        Designed & Managed by <span>Virtual Pebbles</span>
+      </p>
+    </div>
+ </footer>
+   <!-- Floating WhatsApp Icon -->
+<div class="wa-float" id="waToggle" title="Chat with us">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+ <!-- Floating WhatsApp Icon -->
+<div class="wa-float" id="waToggle" title="Chat with us">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+
+  <!-- Chat container -->
+  <div class="chat-container" id="chatPanel" aria-hidden="true">
+    <div class="chat-top">
+      <img src="../IMAGES/sliderimages/network-and-Infra.jpg" alt=""
+        style="width:44px;height:44px;border-radius:8px;background:var(--glass)" />
+      <div>
+        <div class="title">Customer Support</div>
+        <div class="status" id="botStatus">Usually replies within a minute</div>
+      </div>
+      <button class="close-btn" id="closeChat" aria-label="Close chat">✕</button>
+    </div>
+
+    <div class="messages" id="messages" role="log" aria-live="polite"></div>
+
+    <div class="quick-links" id="quickLinks">
+      <button data-q="products">Products</button>
+      <button data-q="about">About</button>
+      <button data-q="contact">Contact</button>
+      <button data-q="pricing">Pricing</button>
+      <button data-q="hours">Hours</button>
+    </div>
+
+    <div class="composer">
+      <input id="userInput" type="text" placeholder="Type a message or ask something..." aria-label="Message input" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Enquiry panel -->
+  <div class="enquiry-panel" id="enquiryPanel">
+    <div class="head">Enquiry Form
+      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
+    </div>
+
+    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email (optional)" required />
+      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+      <button type="submit">Send Enquiry</button>
+    </form>
+  </div>
+
+   
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="../JS/chat.js"></script>
+<script src="../JS/footer.js"></script>
+<script src="../JS/header.js"></script>
+  <script>
+    const mainSlider = new Swiper(".main-slider", {
+      loop: true,
+      spaceBetween: 10,
+      centeredSlides: false,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        reverseDirection: false, // Optional but safe
+      },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        769: {
+          slidesPerView: 1,
+        },
+        0: {
+          slidesPerView: 1,
+        }
+      }
+    });
+
+    const popupSlider = new Swiper(".popup-slider", {
+      loop: true,
+      spaceBetween: 10,
+      zoom: true,
+      navigation: {
+        nextEl: ".popup .swiper-button-next",
+        prevEl: ".popup .swiper-button-prev",
+      },
+      pagination: {
+        el: ".popup .swiper-pagination",
+        clickable: true,
+      }
+    });
+
+    document.querySelectorAll(".main-slider img").forEach((img, index) => {
+      img.addEventListener("click", () => {
+        document.getElementById("popup").style.display = "block";
+        popupSlider.slideToLoop(index, 0);
+      });
+    });
+
+    document.getElementById("popupClose").addEventListener("click", () => {
+      document.getElementById("popup").style.display = "none";
+    });
+
+    var swiper = new Swiper(".reviewSwiper", {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+
+    function openForm() {
+      document.getElementById('enquiryForm').style.display = 'block';
+    }
+    function closeForm() {
+      document.getElementById('enquiryForm').style.display = 'none';
+    }
+    function openForm() {
+      document.getElementById('enquiryForm').style.display = 'block';
+    }
+    function closeForm() {
+      document.getElementById('enquiryForm').style.display = 'none';
+    }
+
+    // Send data to Python backend
+    document.getElementById("formData").addEventListener("submit", function (e) {
+      e.preventDefault();
+      fetch("/submit_enquiry", {
+        method: "POST",
+        body: new FormData(this)
+      })
+        .then(res => res.text())
+        .then(data => {
+          alert(data);
+          closeForm();
+        });
+    });
+
+ 
+  </script>
+
+</body>
+
+</html>
