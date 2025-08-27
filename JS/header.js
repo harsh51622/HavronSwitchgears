@@ -9,10 +9,10 @@ function toggleTheme() {
 
 
   if (darkMode) {
-    img.src="https://harsh51622.github.io/HavronSwitchgearsLOGO/new white 1.png"
+    img.src="https://harsh51622.github.io/HavronSwitchgears/LOGO/new white 1.png"
 
   } else {
-    img.src = "https://harsh51622.github.io/HavronSwitchgearsLOGO/new.png"; // Replace with your light mode image
+    img.src = "https://harsh51622.github.io/HavronSwitchgears/LOGO/new.png"; // Replace with your light mode image
 
   }
 }
@@ -22,11 +22,11 @@ function searchPage() {
 
   // Map of keywords to files (can include multiple keywords for each file)
   const fileMap = {
-    "../MAIN/contact us.html": ["about", "team", "company","email"],
-    "../items/capacitor.html": ["capacitors", "capacitor","fan capacitor"],
-    "../items/double.html": ["singledoor", "door", "doubledoor"],
-    "../items/changeover.html":["changeover","off load changeover","onload changeover"],
-    "../items/mcb.html":["mcb","big mcb"]
+    "https://harsh51622.github.io/HavronSwitchgears/MAIN/contact us.html": ["about", "team", "company","email"],
+    "https://harsh51622.github.io/HavronSwitchgears/items/capacitor.html": ["capacitors", "capacitor","fan capacitor"],
+    "https://harsh51622.github.io/HavronSwitchgears/items/double.html": ["singledoor", "door", "doubledoor"],
+    "https://harsh51622.github.io/HavronSwitchgears/items/changeover.html":["changeover","off load changeover","onload changeover"],
+    "https://harsh51622.github.io/HavronSwitchgears/items/mcb.html":["mcb","big mcb"]
   };
 
   // Try to find the one file that matches ALL keywords
@@ -53,7 +53,7 @@ function searchPage() {
 const clickimage = document.querySelector(".logoheader");
 clickimage.onclick = () => {
   console.log("harsg")
-  window.location.href ="../index.html"
+  window.location.href ="https://harsh51622.github.io/HavronSwitchgears/index.html"
 }
 
 const dropdown=document.querySelector(".Dropdown");
