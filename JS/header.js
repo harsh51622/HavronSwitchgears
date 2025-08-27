@@ -9,10 +9,10 @@ function toggleTheme() {
 
 
   if (darkMode) {
-    img.src="../LOGO/new white 1.png"
+    img.src="https://harsh51622.github.io/HavronSwitchgearsLOGO/new white 1.png"
 
   } else {
-    img.src = "../LOGO/new.png"; // Replace with your light mode image
+    img.src = "https://harsh51622.github.io/HavronSwitchgearsLOGO/new.png"; // Replace with your light mode image
 
   }
 }
