@@ -22,7 +22,7 @@ let conversation = []; // {from: 'bot'|'user', text: '...' , t: timestamp}
 // ---------- CANNED KNOWLEDGE ----------
 const canned = [
   {keys: ['hi','hello','hey','hai','hlo'], reply: "Hello! What can I help you with today? 😊\nYou can ask about Products, Pricing, Contact or Working Hours."},
-  {keys: ['products','product','catalog'], reply: "We have these categories: <a href ='../items/capacitor.html' target='_blank'>Capacitors</a> , <a href ='../items/mcb.html' target='_blank'>MCBs</a> , <a href ='../items/double.html' target='_blank'>Double Door</a>. Want to see details for any?<a href ='../MAIN/products.html' target='_blank'>All Products</a>" },
+  {keys: ['products','product','catalog'], reply: "We have these categories: <a href ='https://harsh51622.github.io/HavronSwitchgears/items/capacitor.html' target='_blank'>Capacitors</a> , <a href ='../items/mcb.html' target='_blank'>MCBs</a> , <a href ='../items/double.html' target='_blank'>Double Door</a>. Want to see details for any?<a href ='../MAIN/products.html' target='_blank'>All Products</a>" },
   {keys: ['about','company','who are you'], reply: "We are Acme Corp — quality products since 2010. Visit our <a href ='../MAIN/about us.html' target='_blank'>About us</a> for more."},
   {keys: ['contact','phone','call','email'], reply: "You can reach us at +91-98765-43210 or email support@example.com. Want to fill an enquiry? <a href ='../MAIN/contact us.html#enquiryModal' target='_blank'>Time Table</a>." },
   {keys: ['pricing','price','cost','rate'], reply: "Pricing depends on the product. For quick quotes, tell me product name or click 'Enquiry' to request a quote."},

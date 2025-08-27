@@ -107,7 +107,7 @@ margin: 50px;
  
 }
 .scrolablecontent{
-  background-image: url('/IMAGES/with\ us.jpg'); /* Replace with your actual image path */
+  background-image: url('../IMAGES/weight.png'); /* Replace with your actual image path */
   background-size: cover;
   background-position: center;
   height: 430px;
@@ -763,7 +763,7 @@ border-radius: 10px;}
  
 }
 .scrolablecontent{
-  background-image: url('/IMAGES/with\ us.jpg'); /* Replace with your actual image path */
+  background-image: url('/IMAGES/weight.png'); /* Replace with your actual image path */
   background-size: cover;
   background-position: center;
   height: 300px;

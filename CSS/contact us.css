@@ -7,7 +7,7 @@
   
 
     header {
-      background-image:image-set("../../IMAGES/Contact-Us-Banner.jpg");
+      background-image:image-set("../IMAGES/Contact-Us-Banner.jpg");
       background-position: center;
       color: white;
       padding: 20px 10px;
