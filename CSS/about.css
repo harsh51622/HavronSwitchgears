@@ -7,6 +7,23 @@ body {
 
 
 }
+
+body.dark .headcompany{
+  background-color: black;
+  color:white
+}
+
+body.dark .companyprofile {
+  background-color: rgb(29, 27, 27);
+  color:white;
+}
+body.dark .webeleve {
+  background-color: rgb(64, 54, 17);
+  color:black;
+}
+
+
+
   .locates {
 
     height: 70vh;
@@ -921,4 +938,5 @@ flex-wrap: wrap;
       border-width: 10px 15px 10px 0;
       border-color: transparent #007bff transparent transparent;
     }
+    
 }
