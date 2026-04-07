@@ -16,14 +16,21 @@ function toggleTheme() {
 
   }
 }
+ // Modal aur Close Button ko select karo
+const enquiryModal = document.getElementById("enquiryModal");
+const closeBtn = document.getElementById("closeBtn");
 
-let closeBtn = document.getElementById("closeBtn")
+// Close button click event
+closeBtn.addEventListener("click", () => {
+  enquiryModal.style.display = "none";
+});
 
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      form.requestSubmit(); // Trigger submit on close
-    });
-
+// Agar user modal ke bahar click kare to close ho jaye
+window.addEventListener("click", (e) => {
+  if (e.target === enquiryModal) {
+    enquiryModal.style.display = "none";
+  }
+});
 const slidesContainer = document.getElementById("slides");
 let slides = document.querySelectorAll(".slide");
 const dotsContainer = document.getElementById("dots");
@@ -223,39 +230,3 @@ function opendropdown()
     document.getElementById(id).classList.add('active');
   }
 
- const form = document.getElementById('form');
-const submitBtn = form.querySelector('button[type="submit"]');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(form);
-    formData.append("access_key", "640ae93f-ac1b-492d-a019-3e2c20b1f96d");
-
-    const originalText = submitBtn.textContent;
-
-    submitBtn.textContent = "Sending...";
-    submitBtn.disabled = true;
-
-    try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            alert("Success! Your message has been sent.");
-            form.reset();
-        } else {
-            alert("Error: " + data.message);
-        }
-
-    } catch (error) {
-        alert("Something went wrong. Please try again.");
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});

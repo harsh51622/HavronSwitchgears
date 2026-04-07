@@ -161,16 +161,17 @@ body.dark .dropdown-content a:hover{
   position: fixed;
   top: 60px;
   right: 1rem;
-  background: inherit;
+  background: rgba(255, 255, 255, 0.92);
   padding: 0.5rem;
   border-radius: 5px;
-   background-color: black;
   z-index: 999;
-  border: 1px solid black;
+  border: 1px solid #ccd6e0;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
 }
 
 body.dark .search-box {
-  border: 1px dotted white;
+  background: rgba(18, 24, 35, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .search-box input {

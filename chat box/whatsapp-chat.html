@@ -51,18 +51,57 @@
       <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
     </div>
 
-    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email (optional)" required />
-      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
-      <button type="submit">Send Enquiry</button>
+    <form action="https://api.web3forms.com/submit" method="POST"
+          style="background-color:#fff; padding:20px; border:2px solid #007BFF;  
+                 border-radius:8px; display:flex; flex-direction:column; gap:12px; 
+                 width:90%; max-width:400px; min-width:250px; position:relative; 
+                 box-sizing:border-box;">
+
+      <!-- 🔴 Close Button -->
+      <button type="button" id="closeBtnPanel" 
+              style="position:absolute; top:10px; right:10px; 
+                     background:none; border:none; font-size:24px; cursor:pointer;">
+        &times;
+      </button>
+
+      <h2 style="text-align:center; margin-bottom:10px;">Enquiry Form</h2>       
+
+      <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+      <input type="text" name="name" required placeholder="Your Name"
+             style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+      <input type="email" name="email" required placeholder="Your Email"
+             style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+      <input type="tel" name="phone" required placeholder="Your Phone Number"    
+             style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+      <textarea name="message" required placeholder="Your Message" rows="2"      
+                style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px; resize:vertical;"></textarea>
+
+      <button type="submit"
+              style="padding:12px; background-color:#007BFF; color:white;        
+                     border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+        Submit Form
+      </button>
+
     </form>
   </div>
 
   <script src="chat.js">
 
   </script>
+
+<script>
+// 🔹 Close Enquiry Panel
+const closeBtnPanel = document.getElementById('closeBtnPanel');
+
+closeBtnPanel.addEventListener('click', (e) => {
+  e.preventDefault();
+  enquiryPanel.style.display = 'none';
+});
+</script>
 </body>
 
 </html>

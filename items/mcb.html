@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Double Door</title>
+  <title>MCBs</title>
   <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../CSS/headers.css">
   <link rel="stylesheet" href="../CSS/footer.css">
@@ -14,6 +14,124 @@
 
 
   <style>
+
+/* 🌙 DARK MODE FULL WEBSITE */
+
+/* 🌙 PREMIUM DARK MODE */
+
+/* 🌙 DARK + GOLD PREMIUM THEME */
+
+body.dark {
+  background: #0b0b0c; /* deep black */
+  color: #e5e5e5;
+}
+
+/* Headings */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #ffffff;
+}
+
+/* Cards / Sections */
+body.dark .product-info,
+body.dark .details,
+body.dark .reviews,
+body.dark .related,
+body.dark .form-container {
+  background: #151515;
+  color: #e5e5e5;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* Product Box */
+body.dark .box {
+  background: #181818;
+  border: 1px solid #2c2c2c;
+  transition: 0.3s;
+}
+
+/* 🔥 Hover = Glow Effect */
+body.dark .box:hover {
+  transform: translateY(-6px);
+  border-color: #f59e0b;
+  box-shadow: 0 0 20px rgba(245,158,11,0.3);
+}
+
+/* Product Name */
+body.dark .relatedproducts a p {
+  color: #f5f5f5;
+}
+
+/* Price (Golden Highlight) */
+body.dark .price {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+/* Stock */
+body.dark .stock {
+  color: #22c55e;
+}
+
+/* Buttons */
+body.dark button {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 600;
+}
+
+body.dark button:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* Inputs */
+body.dark input,
+body.dark textarea {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+body.dark input:focus,
+body.dark textarea:focus {
+  border-color: #f59e0b;
+}
+
+/* Table */
+body.dark table {
+  background: #151515;
+}
+
+body.dark th {
+  background: #222;
+}
+
+body.dark td {
+  border-color: #333;
+}
+
+/* Reviews */
+body.dark .reviews-card {
+  background: #1a1a1a;
+}
+
+/* Modal */
+body.dark .modal {
+  background: rgba(0,0,0,0.9);
+}
+
+/* Slider */
+body.dark .swiper-slide {
+  background: #000;
+}
+
+/* Links */
+body.dark a {
+  color: #f59e0b;
+}
+
     body {
       font-family: sans-serif;
       margin: 0;
@@ -58,7 +176,7 @@
       width: 500px;
       height: 500px;
       object-fit: cover;
-   
+
       cursor: pointer;
       border-radius: 10px;
       transition: transform 0.3s;
@@ -205,7 +323,7 @@
       height: 100%;
       text-align: left;
       border: 1px solid whitesmoke;
-    background-color: #afa7a7;
+      background-color: #afa7a7;
     }
 
     .reviews-card p {
@@ -320,112 +438,113 @@
       font-weight: 700;
     }
 
-    
-/* 🔹 Enquiry Form Modal */
-.modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  z-index: 99999999;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.7);
-}
 
-.form-container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.3s ease-in-out;
-}
+    /* 🔹 Enquiry Form Modal */
+    .modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 99999999;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0, 0, 0, 0.7);
+    }
 
-@keyframes fadeIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
 
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+    @keyframes fadeIn {
+      from {
+        transform: scale(0.95);
+        opacity: 0;
+      }
 
-.form-container h2 {
-  margin-bottom: 15px;
-}
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
 
-input,
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
+    .form-container h2 {
+      margin-bottom: 15px;
+    }
 
-input:hover {
-  border-color: #007bff;
-}
+    input,
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
 
-button[type="submit"] {
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
+    input:hover {
+      border-color: #007bff;
+    }
 
-button[type="submit"]:hover {
-  background-color: #218838;
-}
+    button[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.close-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
+    button[type="submit"]:hover {
+      background-color: #218838;
+    }
 
-.close-btn:hover {
-  background-color: #c0392b;
-}
+    .close-btn {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
 
-table {
-  width: 90%;
-  border-collapse: collapse;
-  margin: 20px auto;
-}
+    .close-btn:hover {
+      background-color: #c0392b;
+    }
 
-td,
-th {
-  padding: 10px;
-  border: 1px solid #333;
-  text-align: center;
-}
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
 
-th {
-  background-color: #f2f2f2;
-}
-.container{
-  width: 50%;
-}
+    td,
+    th {
+      padding: 10px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      width: 50%;
+    }
 
     /* Responsive for Mobile */
     @media (max-width: 768px) {
@@ -488,7 +607,7 @@ th {
         gap: 10px;
         margin-bottom: 8px;
         width: 100%;
-        
+
       }
 
       .reviews-user img {
@@ -508,18 +627,18 @@ th {
         padding: 10px
       }
 
-    
+
 
       .allboxes {
-          gap: 0px;
-      padding: 0px 10px;
+        gap: 0px;
+        padding: 0px 10px;
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-              align-items:normal;
-              width: 100%;
+        align-items: normal;
+        width: 100%;
       }
 
       .allboxes::-webkit-scrollbar {
@@ -535,11 +654,11 @@ th {
         flex: 1 1 calc(33.33% - 16px);
         width: 100%;
         text-align: center;
-      padding: 10px;
+        padding: 10px;
         margin: 10px
       }
 
-      .box strong{
+      .box strong {
         font-size: 20px;
         width: 140px;
       }
@@ -571,26 +690,27 @@ th {
         width: 156px;
         height: 160px;
       }
-.relatedproducts a p{
-  font-size: 18px;
-  margin: 0px;
-}
-  table {
-    width: 100%;
-    font-size: 14px;
-  }
 
-  td,
-  th {
-    padding: 8px;
-  }
-  .container{
-  width: 100%;
-}
- 
-}
+      .relatedproducts a p {
+        font-size: 18px;
+        margin: 0px;
+      }
 
-    
+      table {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      td,
+      th {
+        padding: 8px;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+    }
   </style>
 </head>
 
@@ -598,7 +718,7 @@ th {
   <div class="header-container">
 
     <!-- Theme and toggles -->
- 
+
 
     <nav>
       <div class="logoheader"><img id="img-logo" src="../LOGO/new.png" href="../index.html"></div>
@@ -630,37 +750,37 @@ th {
 
       <!-- Right controls -->
       <div class="nav-right">
-       
 
-   
+
+
         <label class="search-label" id="searchIcon">&#128269;</label>
         <label onclick="toggleTheme()" class="theme-label">🌓</label>
         <button id="hamburger" class="hamburger">
           <span></span>
-           <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
 
         </button>
-    </div>
       </div>
+  </div>
 
-      <!-- Search Box -->
+  <!-- Search Box -->
 
-      <div class="search-box" id="searchBox">
+  <div class="search-box" id="searchBox">
 
-        <input type="text" id="searchInput" placeholder="Type to search (e.g. products, mcb)">
-        <button onclick="searchPage()">Go</button>
+    <input type="text" id="searchInput" placeholder="Type to search (e.g. products, mcb)">
+    <button onclick="searchPage()">Go</button>
 
-      </div>
+  </div>
 
-        <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu">
- <a href="../index.html">HOME</a>
-      <a href="../MAIN/about us.html">ABOUT US</a>
-     <a href="../MAIN/services.html">NETWORKS</a>
-     <a href="../MAIN/products.html">PRODUCTS</a>
-      <a href="../MAIN/contact us.html">CONTACT US</a>
-    </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="../index.html">HOME</a>
+    <a href="../MAIN/about us.html">ABOUT US</a>
+    <a href="../MAIN/services.html">NETWORKS</a>
+    <a href="../MAIN/products.html">PRODUCTS</a>
+    <a href="../MAIN/contact us.html">CONTACT US</a>
+  </div>
 
 
   <div style="padding:10px;font-size:14px; margin-top: 80px">
@@ -675,7 +795,8 @@ th {
     <!-- Slider -->
     <div class="swiper main-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG-20250412-WA0004 (1).png" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG-20250412-WA0004 (1).png" alt="Slide 1">
+        </div>
         <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG_6617 (1).png" alt="Slide 2">
         </div>
         <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG_6622 (1).png" alt="Slide 3"></div>
@@ -695,27 +816,47 @@ th {
         </div>
         <p class="price">₹125 <span class="old-price">₹185</span></p>
         <p class="stock">In Stock</p>
-        <button onclick="openForm()"
+        <button onclick="document.getElementById('enquiryModal').style.display = 'flex'"
           style="padding:10px 20px;background:#007BFF;color:white;border:none;border-radius:5px;">Enquiry</button>
 
-        <!-- Popup Form -->
-        <div id="enquiryForm"
-          style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;">
-         
+        <!-- 🔹 Modal Form Overlay -->
+        <div id="enquiryModal" class="modal" style="position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.5); display:none; justify-content:center;  
+            align-items:center; z-index:1000;">
 
-      
-  <div id="enquiryModal" class="modal">
-    <form id="enquiryForm" class="form-container" action="http://127.0.0.1:5000/submit" method="POST">
-      <button type="button" class="close-btn" id="closeBtn"onclick="closeForm()">&times;</button>
-      <h2>Enquiry Form</h2>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="product" placeholder="Which Product?" required />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-          
+          <form action="https://api.web3forms.com/submit" method="POST" style="background-color:#fff; padding:20px; border:2px solid #007BFF;  
+               border-radius:8px; display:flex; flex-direction:column; gap:12px; 
+               width:90%; max-width:400px; min-width:250px; position:relative; 
+               box-sizing:border-box;">
+
+            <!-- 🔴 Close Button -->
+            <button type="button" id="closeBtn" style="position:absolute; top:10px; right:10px; 
+                   background:none; border:none; font-size:24px; cursor:pointer;">
+              &times;
+            </button>
+
+            <h2 style="text-align:center; margin-bottom:10px;">Enquiry Form</h2>
+
+            <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+            <input type="text" name="name" required placeholder="Your Name"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <input type="email" name="email" required placeholder="Your Email"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <input type="tel" name="phone" required placeholder="Your Phone Number"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <textarea name="message" required placeholder="Your Message" rows="2"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px; resize:vertical;"></textarea>
+
+            <button type="submit" style="padding:12px; background-color:#007BFF; color:white;        
+                   border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+              Submit Form
+            </button>
+
+          </form>
         </div>
 
       </div>
@@ -725,110 +866,113 @@ th {
       <div class="rightdetails">
         <h3>USP’s</h3>
         <ul>
-                 <li>● Breaking Capacity 10kA – The MCB can break high Short Circuit fault under the conditions
-                            of 3 phase fault or phase - Neutral fault, voltage dip. The Elmeck MCB can protect equipment
-                            by opening the contacts even if the high current of 10kA appears.</li>
-                        <li>● Energy Limit Class 3 - Elmeck MCB is designed to allow minimum let through energy in case
-                            of faults. It operates with high-speed mechanism in which Electrodynamic forces set up by
-                            the heavy current due to short-circuit, separates the contacts several times faster before
-                            it could reach the peak value, thus suppressing the high current.</li>
-                        <li>● Finger Touch Proof (IP20) - Finger proof terminals eliminate chances of accidental contact
-                            with live parts. All the live parts are shrouded/ inaccessible; ensuring safety of
-                            installers.</li>
-                        <li>● Positive Contact Indicator – Elmeck MCB has a clearly visible contact position indicator to identify the real positions of contacts inside the MCB.</li>
-                        <li>● Large Cable Terminals – Elmeck MCB can accommodate wire size of upto 35sq. mm.</li>
-                        <li>● Energy Efficient - Elmeck MCB has lower wattage loss values as compared to the specification of IS/IEC standards. Due to lower wattage loss, it can be termed as an energy efficient.</li>
-                        <li>● Available in B & C Curves.</li>
+          <li>● Breaking Capacity 10kA – The MCB can break high Short Circuit fault under the conditions
+            of 3 phase fault or phase - Neutral fault, voltage dip. The Elmeck MCB can protect equipment
+            by opening the contacts even if the high current of 10kA appears.</li>
+          <li>● Energy Limit Class 3 - Elmeck MCB is designed to allow minimum let through energy in case
+            of faults. It operates with high-speed mechanism in which Electrodynamic forces set up by
+            the heavy current due to short-circuit, separates the contacts several times faster before
+            it could reach the peak value, thus suppressing the high current.</li>
+          <li>● Finger Touch Proof (IP20) - Finger proof terminals eliminate chances of accidental contact
+            with live parts. All the live parts are shrouded/ inaccessible; ensuring safety of
+            installers.</li>
+          <li>● Positive Contact Indicator – Elmeck MCB has a clearly visible contact position indicator to identify the
+            real positions of contacts inside the MCB.</li>
+          <li>● Large Cable Terminals – Elmeck MCB can accommodate wire size of upto 35sq. mm.</li>
+          <li>● Energy Efficient - Elmeck MCB has lower wattage loss values as compared to the specification of IS/IEC
+            standards. Due to lower wattage loss, it can be termed as an energy efficient.</li>
+          <li>● Available in B & C Curves.</li>
         </ul>
       </div>
     </div>
   </div>
-    <table>
-                  <!--table header cell--> <th colspan="2">TECHNICAL SPECIFICATIONS</th> <!-- collaspan use to merge a cell-->
-                   
-                   
-                        <tr> <!--table row--> 
-                          <td >RStandard Conformity</td>
-                          <td>IS/IEC 60898-1-2002</td>  <!--table data--> 
-                        </tr>
-                        <tr>
-                          <td>Standard Rated Current (In)</td> <!-- 2nd row, 2 columns -->
-                          <td>6A-63A</td>
-                        </tr>
-                        
-                          <tr>
-                            <td>Poles</td> 
-                            <td>SP, SP+N, DP, TP, TP+N, FP</td>
-                          </tr>
-                          <tr>
-                            <td>Rated Short Circuit Breaking Capacity (Icn)</td> 
-                            <td>10000A (10kA)</td>
-                          </tr>
-                          <tr>
-                            <td>Rated Voltage (Ue)</td> 
-                            <td>240/415V AC</td>
-                          </tr>
-                          <tr>
-                            <td>Rated Frequency (f)</td> 
-                            <td>50Hz</td>
-                          </tr>
-                          <tr>
-                            <td>Rated Insulation Voltage (Ui)</td> 
-                            <td>660V-</td>
-                          </tr>
-                          <tr>
-                            <td>Ambient Temperature</td> 
-                            <td> -5’ to 55’C</td>
-                          </tr>
-                      </table>
+  <table>
+    <!--table header cell-->
+    <th colspan="2">TECHNICAL SPECIFICATIONS</th> <!-- collaspan use to merge a cell-->
+
+
+    <tr> <!--table row-->
+      <td>RStandard Conformity</td>
+      <td>IS/IEC 60898-1-2002</td> <!--table data-->
+    </tr>
+    <tr>
+      <td>Standard Rated Current (In)</td> <!-- 2nd row, 2 columns -->
+      <td>6A-63A</td>
+    </tr>
+
+    <tr>
+      <td>Poles</td>
+      <td>SP, SP+N, DP, TP, TP+N, FP</td>
+    </tr>
+    <tr>
+      <td>Rated Short Circuit Breaking Capacity (Icn)</td>
+      <td>10000A (10kA)</td>
+    </tr>
+    <tr>
+      <td>Rated Voltage (Ue)</td>
+      <td>240/415V AC</td>
+    </tr>
+    <tr>
+      <td>Rated Frequency (f)</td>
+      <td>50Hz</td>
+    </tr>
+    <tr>
+      <td>Rated Insulation Voltage (Ui)</td>
+      <td>660V-</td>
+    </tr>
+    <tr>
+      <td>Ambient Temperature</td>
+      <td> -5’ to 55’C</td>
+    </tr>
+  </table>
 
 
   <div class="scroll-container">
-<h2 style="text-align:center;margin-bottom:20px;">Customer Reviews</h2>
-      <div class="allboxes">
-        <div class="box">
-          <div class="reviews-card">
-            <div class="reviews-user">
-              <img src="https://i.pravatar.cc/60?img=3" alt="User" />
-              <div>
-                <strong>Rahul Sharma</strong>
-                <small>ID: #10234</small>
-              </div>
+    <h2 style="text-align:center;margin-bottom:20px;">Customer Reviews</h2>
+    <div class="allboxes">
+      <div class="box">
+        <div class="reviews-card">
+          <div class="reviews-user">
+            <img src="https://i.pravatar.cc/60?img=3" alt="User" />
+            <div>
+              <strong>Rahul Sharma</strong>
+              <small>ID: #10234</small>
             </div>
-            <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
-            <p>"Bohot acha product, quality best hai!"</p>
           </div>
-        </div>
-
-        <div class="box">
-          <div class="reviews-card">
-            <div class="reviews-user">
-              <img src="https://i.pravatar.cc/60?img=2" alt="User" />
-              <div>
-                <strong>Priya Gupta</strong>
-                <small>ID: #10235</small>
-              </div>
-            </div>
-            <div class="reviews-rating">⭐⭐⭐⭐</div>
-            <p>"Sound quality awesome, battery backup bhi mast!"</p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="reviews-card">
-            <div class="reviews-user">
-              <img src="https://i.pravatar.cc/60?img=3" alt="User" />
-              <div>
-                <strong>Ankit Verma</strong>
-                <small>ID: #10236</small>
-              </div>
-            </div>
-            <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
-            <p>"Fast delivery and packaging safe tha."</p>
-          </div>
+          <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
+          <p>"Bohot acha product, quality best hai!"</p>
         </div>
       </div>
 
-     
+      <div class="box">
+        <div class="reviews-card">
+          <div class="reviews-user">
+            <img src="https://i.pravatar.cc/60?img=2" alt="User" />
+            <div>
+              <strong>Priya Gupta</strong>
+              <small>ID: #10235</small>
+            </div>
+          </div>
+          <div class="reviews-rating">⭐⭐⭐⭐</div>
+          <p>"Sound quality awesome, battery backup bhi mast!"</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="reviews-card">
+          <div class="reviews-user">
+            <img src="https://i.pravatar.cc/60?img=3" alt="User" />
+            <div>
+              <strong>Ankit Verma</strong>
+              <small>ID: #10236</small>
+            </div>
+          </div>
+          <div class="reviews-rating">⭐⭐⭐⭐⭐</div>
+          <p>"Fast delivery and packaging safe tha."</p>
+        </div>
+      </div>
+    </div>
+
+
 
 
   </div>
@@ -841,26 +985,26 @@ th {
     <div class="relatedproducts">
 
       <!-- Product 1 -->
-      <a href="/double.html" style="text-decoration:none;color:black;text-align:center;">
+      <a href="double.html" style="text-decoration:none;color:black;text-align:center;">
         <img src="../IMAGES/items/transperent/IMG-20250412-WA0000 (1).png" alt="Headphone 1">
-        <p >DOUBLE doloribus</p>
+        <p>DOUBLE doloribus</p>
       </a>
 
-    <!-- Product 2 -->
+      <!-- Product 2 -->
       <a href="capacitor.html" style="text-decoration:none;color:black;text-align:center;">
-        <img src="../IMAGES/items/new/IMG_6624.JPG" alt="Headphone 2">
+        <img src="../IMAGES/items/transperent/IMG_6624 (1).png" alt="Headphone 2">
         <p>CAPACITORS</p>
       </a>
 
       <!-- Product 3 -->
       <a href="changeover.html" style="text-decoration:none;color:black;text-align:center;">
-        <img src="../IMAGES/items/rewirable-switch-fuse-unit.jpg" alt="Headphone 3">
+        <img src="../IMAGES/items/changover/Havron wireless enclosure with antenna.png" alt="Headphone 3">
         <p>MAINSWITCH</p>
       </a>
 
     </div>
   </section>
-  </div>
+
 
 
 
@@ -869,7 +1013,8 @@ th {
     <span class="popup-close" id="popupClose">&times;</span>
     <div class="swiper popup-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG-20250412-WA0004 (1).png" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG-20250412-WA0004 (1).png" alt="Slide 1">
+        </div>
         <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG_6617 (1).png" alt="Slide 2">
         </div>
         <div class="swiper-slide"><img src="../IMAGES/items/transperent/IMG_6622 (1).png" alt="Slide 3"></div>
@@ -880,61 +1025,66 @@ th {
     </div>
   </div>
 
- <footer>
-  <!-- ✅ Info Banner Section -->
-  <section class="info-banner">
-    <div class="info-content">
-      <h1><a href="../index.html"><img src="../LOGO/new white 1.png" alt=""></a></h1>
-      <h4>Build in Safety</h4>
-      <p>
-        <strong>HAVRON</strong> manufactures its products to international standards and, therefore, can fully meet the
-        needs of its customers nationally and internationally.
-      </p>
+  <footer>
+    <!-- ✅ Info Banner Section -->
+    <section class="info-banner">
+      <div class="info-content">
+        <h1><a href="../index.html"><img src="../LOGO/new white 1.png" alt=""></a></h1>
+        <h4>Build in Safety</h4>
+        <p>
+          <strong>HAVRON</strong> manufactures its products to international standards and, therefore, can fully meet
+          the
+          needs of its customers nationally and internationally.
+        </p>
 
-      <!-- Certifications -->
-      <div class="certifications">
-        <img src="../LOGO/iso certified/iso-iec-17025-2017-testing-and-calibration-laboratories-certification-services-500x500.jpg" alt="ISO" />
-         <img src="../LOGO/iso certified/aawnnnlt1.webp" alt="ISI" />
-        <img src="../LOGO/iso certified/ISO 17025-01.png" alt="CE" />
-       
+        <!-- Certifications -->
+        <div class="certifications">
+          <img
+            src="../LOGO/iso certified/iso-iec-17025-2017-testing-and-calibration-laboratories-certification-services-500x500.jpg"
+            alt="ISO" />
+          <img src="../LOGO/iso certified/aawnnnlt1.webp" alt="ISI" />
+          <img src="../LOGO/iso certified/ISO 17025-01.png" alt="CE" />
+
+        </div>
+        <div class="years">
+          <!-- 20 Years Badge -->
+          <div class="years-badge">
+            <img
+              src="../LOGO/iso certified/kisspng-lapel-pin-brand-logo-years-of-service-5b0f3e6e795522.814165161527725678497.jpg"
+              alt="20 Years" />
+            <p>Of Delivering Electrical Excellence</p>
+          </div>
+          <div class="contacts">
+            <h1>Contact Us</h1>
+            <div class="row">
+
+              <!-- Instagram -> apna path yahan -->
+              <a class="btn ig" href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener">
+                <span>IG</span>
+              </a>
+
+              <!-- Facebook -> apna path yahan -->
+              <a class="btn fb" href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">
+                <span>FB</span>
+              </a>
+
+              <!-- Twitter/X -> apna path yahan -->
+              <a class="btn tw" href="https://x.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener">
+                <span>X</span>
+              </a>
+
+              <!-- WhatsApp -> click par number copy + alert -->
+              <button class="btn wa" id="waCopy" type="button">
+                <span>WA</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
       </div>
-  <div class="years">
-      <!-- 20 Years Badge -->
-      <div class="years-badge">
-        <img src="../LOGO/iso certified/kisspng-lapel-pin-brand-logo-years-of-service-5b0f3e6e795522.814165161527725678497.jpg" alt="20 Years" />
-       <p>Of Delivering Electrical Excellence</p>
-      </div>
-<div class="contacts">
-  <h1>Contact Us</h1>
-          <div class="row">
-            
-  <!-- Instagram -> apna path yahan -->
-  <a class="btn ig" href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" rel="noopener">
-    <span>IG</span>
-  </a>
+    </section>
 
-  <!-- Facebook -> apna path yahan -->
-  <a class="btn fb" href="https://facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener">
-    <span>FB</span>
-  </a>
-
-  <!-- Twitter/X -> apna path yahan -->
-  <a class="btn tw" href="https://x.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener">
-    <span>X</span>
-  </a>
-
-  <!-- WhatsApp -> click par number copy + alert -->
-  <button class="btn wa" id="waCopy" type="button">
-    <span>WA</span>
-  </button>
-</div>
-</div>
-       
-      </div>
-  </div>
-  </section>
-
-  <!-- ✅ Footer Section -->
+    <!-- ✅ Footer Section -->
 
     <div class="footer-container">
 
@@ -945,7 +1095,8 @@ th {
         <ul>
           <li><a href="mcb.html"> MINIATURE CIRCUIT BREAKER (MCB)</a></li>
           <li><a href="double.html"><i class="fas fa-arrow-right"></i>DISTRIBUTION BOARDS (DBs)</a> </li>
-          <li><a href="capacitor.html"><i class="fas fa-arrow-right"></i> CAPACITORS (MOTORS, FANS, SUMBERSAWEL)</a></li>
+          <li><a href="capacitor.html"><i class="fas fa-arrow-right"></i> CAPACITORS (MOTORS, FANS, SUMBERSAWEL)</a>
+          </li>
           <li><a href="changeover.html"><i class="fas fa-arrow-right"></i>OFF LOAD CHANGEOVER (CO)</a> </li>
           <li><a href="../MAIN/products.html"><i class="fas fa-arrow-right"></i> View All</a></li>
         </ul>
@@ -955,7 +1106,7 @@ th {
       <div class="footer-box" id="fotter-box2">
         <h3>Quick Links</h3>
         <ul>
-         <li> <a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li> <a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="../MAIN/about us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
           <li><a href="../MAIN/about us.html"><i class="fas fa-blog"></i> Blogs</a></li>
           <li><a href="../MAIN/products.html"><i class="fas fa-users"></i> Products</a></li>
@@ -966,14 +1117,14 @@ th {
       </div>
 
       <!-- Location -->
-      <div class="footer-box"id="fotter-box3">
+      <div class="footer-box" id="fotter-box3">
         <h3>We are here!</h3>
-        <iframe 
+        <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13763.04251776012!2d76.7954079!3d30.8913215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f944d6bba2d7f%3A0x2f51448f727ed452!2sAxiom%20Controls%20Private%20Limited!5e0!3m2!1sen!2sin!4v1693844750930!5m2!1sen!2sin"
           allowfullscreen loading="lazy">
         </iframe>
       </div>
- 
+
 
     </div>
 
@@ -985,16 +1136,16 @@ th {
         Designed & Managed by <span>Virtual Pebbles</span>
       </p>
     </div>
- </footer>
-   <!-- Floating WhatsApp Icon -->
-<div class="wa-float" id="waToggle" title="Chat with us">
-  <i class="fab fa-whatsapp"></i>
-</div>
+  </footer>
+  <!-- Floating WhatsApp Icon -->
+  <div class="wa-float" id="waToggle" title="Chat with us">
+    <i class="fab fa-whatsapp"></i>
+  </div>
 
- <!-- Floating WhatsApp Icon -->
-<div class="wa-float" id="waToggle" title="Chat with us">
-  <i class="fab fa-whatsapp"></i>
-</div>
+  <!-- Floating WhatsApp Icon -->
+  <div class="wa-float" id="waToggle" title="Chat with us">
+    <i class="fab fa-whatsapp"></i>
+  </div>
 
 
   <!-- Chat container -->
@@ -1025,27 +1176,42 @@ th {
     </div>
   </div>
 
-  <!-- Enquiry panel -->
-  <div class="enquiry-panel" id="enquiryPanel">
-    <div class="head">Enquiry Form
-      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
+  <!-- 🔹 Enquiry Panel -->
+  <div id="enquiryPanel"
+    style="position:fixed; right:20px; bottom:96px; width:320px; max-width:calc(100% - 40px); border-radius:12px; background:#fff; color:#111; box-shadow:0 15px 40px rgba(0,0,0,0.25); z-index:999999; display:none; overflow:hidden; transition:all 0.3s ease;">
+
+    <div class="head"
+      style="padding:14px 16px; font-weight:600; font-size:16px; border-bottom:1px solid #e3e3e3; background:linear-gradient(90deg,#f8f8f8,#fdfdfd); display:flex; justify-content:space-between; align-items:center;">
+      Enquiry Form
+      <button onclick="toggleEnquiry(false)"
+        style="background:transparent; border:none; font-size:20px; color:#888; cursor:pointer; transition:color 0.2s;">×</button>
     </div>
 
-    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email (optional)" required />
-      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
-      <button type="submit">Send Enquiry</button>
+    <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST"
+      style="display:flex; flex-direction:column; gap:10px; padding:16px;">
+      <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="tel" name="phone" placeholder="Phone Number" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="email" name="email" placeholder="Email" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="text" name="product" placeholder="Which Product?" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+
+      <button type="submit"
+        style="background:#007BFF; color:#fff; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; transition:all 0.2s;">Submit</button>
     </form>
   </div>
 
-   
+
+
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="../JS/chat.js"></script>
-<script src="../JS/footer.js"></script>
-<script src="../JS/header.js"></script>
+  <script src="../JS/chat.js"></script>
+  <script src="../JS/footer.js"></script>
+  <script src="../JS/header.js"></script>
   <script>
     const mainSlider = new Swiper(".main-slider", {
       loop: true,
@@ -1115,34 +1281,24 @@ th {
     });
 
 
-    function openForm() {
-      document.getElementById('enquiryForm').style.display = 'block';
-    }
-    function closeForm() {
-      document.getElementById('enquiryForm').style.display = 'none';
-    }
-    function openForm() {
-      document.getElementById('enquiryForm').style.display = 'block';
-    }
-    function closeForm() {
-      document.getElementById('enquiryForm').style.display = 'none';
-    }
 
-    // Send data to Python backend
-    document.getElementById("formData").addEventListener("submit", function (e) {
-      e.preventDefault();
-      fetch("/submit_enquiry", {
-        method: "POST",
-        body: new FormData(this)
-      })
-        .then(res => res.text())
-        .then(data => {
-          alert(data);
-          closeForm();
-        });
+
+
+    const enquiryModal = document.getElementById('enquiryModal');
+    const closeBtn = document.getElementById('closeBtn');
+
+    closeBtn.addEventListener('click', () => {
+      enquiryModal.style.display = 'none';
     });
 
- 
+    // Close modal on clicking outside the form
+    window.addEventListener('click', (e) => {
+      if (e.target === enquiryModal) {
+        enquiryModal.style.display = 'none';
+      }
+    });
+
+
   </script>
 
 </body>

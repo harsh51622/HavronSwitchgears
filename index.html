@@ -20,24 +20,41 @@
   <!-- 🔹 Modal Form Overlay -->
   <div id="enquiryModal" class="modal">
     <!-- Action URL ko Web3Forms ke API par change kiya gaya hai -->
-<form id="enquiryForm" class="form-container" action="https://api.web3forms.com/submit" method="POST">
-  
-  <!-- Yahan apni Access Key daalein jo aapko email par mili hai -->
-  <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+    <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST" style="background:#fff; padding:25px; border:2px solid #007BFF;
+               border-radius:12px; display:flex; flex-direction:column;
+               gap:12px; width:90%; max-width:400px;
+               box-shadow:0 10px 30px rgba(0,0,0,0.3);
+               position:relative;">
 
-  <button type="button" class="close-btn" id="closeBtn">&times;</button>
-  <h2>Enquiry Form</h2>
-  
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="tel" name="phone" placeholder="Phone Number" required />
-  <input type="email" name="email" placeholder="Email" required />
-  <input type="text" name="product" placeholder="Which Product?" required />
+      <!-- Access Key -->
+      <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
 
-  <!-- Optional: Submit hone ke baad user kahan jaye (Apna URL daalein) -->
-  <!-- <input type="hidden" name="redirect" value="https://yourdomain.com"> -->
+      <!-- ❌ Close Button -->
+      <button type="button" id="closeBtn" style="position:absolute; top:10px; right:15px;
+                   background:none; border:none; font-size:24px;
+                   cursor:pointer; color:#333;">&times;</button>
 
-  <button type="submit">Submit</button>
-</form>
+      <h2 style="text-align:center; margin-bottom:10px;">Enquiry Form</h2>
+
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding:10px; border:1px solid #ccc; border-radius:6px;">
+
+      <input type="tel" name="phone" placeholder="Phone Number" required
+        style="padding:10px; border:1px solid #ccc; border-radius:6px;">
+
+      <input type="email" name="email" placeholder="Email" required
+        style="padding:10px; border:1px solid #ccc; border-radius:6px;">
+
+      <input type="text" name="product" placeholder="Which Product?" required
+        style="padding:10px; border:1px solid #ccc; border-radius:6px;">
+
+      <button type="submit" style="padding:12px; background:#007BFF; color:#fff;
+                   border:none; border-radius:6px; cursor:pointer;
+                   font-size:16px;">
+        Submit
+      </button>
+
+    </form>
   </div>
   <div class="header-container">
 
@@ -46,7 +63,7 @@
 
     <nav>
       <div class="logoheader"><img id="img-logo" src="LOGO/new.png" href="index.html">
-  </div>
+      </div>
       <!-- hidden audio -->
 
 
@@ -64,7 +81,7 @@
 
             <a href="items/capacitor.html">Capacitors</a>
             <a href="items/mcb.html">Mcb</a>
-     <a href="items/double.html">Doubledoor</a>
+            <a href="items/double.html">Doubledoor</a>
             <a href="items/changeover.html">Changeover</a>
             <a href="items/switchgear.html">Switchgears</a>
 
@@ -81,7 +98,7 @@
 
 
         <label class="search-label" id="searchIcon">&#128269;</label>
-        <label onclick="toggleTheme()" class="theme-label"id="theme-label1">🌓</label>
+        <label onclick="toggleTheme()" class="theme-label" id="theme-label1">🌓</label>
         <button id="hamburger" class="hamburger">
           <span></span>
           <span></span>
@@ -114,7 +131,7 @@
 
   <div class="slider" id="slider">
     <div class="slides" id="slides">
-      <div class="slide" style="background-image: url('IMAGES/sliderimages/NEW.jpg')">
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/new.jpeg')">
         <div class="slide-content">
           <p>Welcome to</p>
           <h2>Havron Switchgears</h2>
@@ -124,7 +141,7 @@
             <button>Download Brochure</button></a>
         </div>
       </div>
-      <div class="slide" style="background-image: url('IMAGES/sliderimages/istockphoto-1459941554-612x612.jpg')">
+      <div class="slide" style="background-image: url('IMAGES/sliderimages/NEW.jpg')">
         <div class="slide-content">
           <h2>Smart Solutions</h2>
           <a href="index.html#alladvertisings">
@@ -149,7 +166,7 @@
         <div class="slide-content">
           <h2>Powering the Future</h2>
           <button>Explore Now</button>
-             <a href="MAIN/products.html"></a>
+          <a href="MAIN/products.html"></a>
         </div>
       </div>
     </div>
@@ -398,7 +415,8 @@
 
     <div id="content1" class="tab-content active">
 
-      <img src="IMAGES/projects/top residential products/FeatureImage_Best-Residential-Projects-in-Pune-2022-1.jpg" alt="">
+      <img src="IMAGES/projects/top residential products/FeatureImage_Best-Residential-Projects-in-Pune-2022-1.jpg"
+        alt="">
       <img src="IMAGES/projects/top residential products/9e780acf-9f67-41e5-a596-74d7a8983003.jpg" alt="">
       <img src="IMAGES/projects/top residential products/rg-pleiades-noida-extension-photos-bannernew1.jpg" alt="">
       <img src="IMAGES/projects/top residential products/residential-project-services-500x500.webp" alt="">
@@ -607,11 +625,11 @@
 
 
   </footer>
- <!-- Floating WhatsApp-style icon -->
-<!-- Floating WhatsApp Icon -->
-<div class="wa-float" id="waToggle" title="Chat with us">
-  <i class="fab fa-whatsapp"></i>
-</div>
+  <!-- Floating WhatsApp-style icon -->
+  <!-- Floating WhatsApp Icon -->
+  <div class="wa-float" id="waToggle" title="Chat with us">
+    <i class="fab fa-whatsapp"></i>
+  </div>
 
 
   <!-- Chat container -->
@@ -642,19 +660,25 @@
     </div>
   </div>
 
-  <!-- Enquiry panel -->
-  <div class="enquiry-panel" id="enquiryPanel">
-    <div class="head">Enquiry Form
-      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
-    </div>
+<!-- 🔹 Enquiry Panel -->
+<div id="enquiryPanel" style="position:fixed; right:20px; bottom:96px; width:320px; max-width:calc(100% - 40px); border-radius:12px; background:#fff; color:#111; box-shadow:0 15px 40px rgba(0,0,0,0.25); z-index:999999; display:none; overflow:hidden; transition:all 0.3s ease;">
+  
+  <div class="head" style="padding:14px 16px; font-weight:600; font-size:16px; border-bottom:1px solid #e3e3e3; background:linear-gradient(90deg,#f8f8f8,#fdfdfd); display:flex; justify-content:space-between; align-items:center;">
+    Enquiry Form
+    <button onclick="toggleEnquiry(false)" style="background:transparent; border:none; font-size:20px; color:#888; cursor:pointer; transition:color 0.2s;">×</button>
+  </div>
 
-    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email (optional)" required />
-      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
-      <button type="submit">Send Enquiry</button>
-    </form>
+  <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:10px; padding:16px;">
+    <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+    <input type="text" name="name" placeholder="Your Name" required style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+    <input type="tel" name="phone" placeholder="Phone Number" required style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+    <input type="email" name="email" placeholder="Email" required style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+    <input type="text" name="product" placeholder="Which Product?" required style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+
+    <button type="submit" style="background:#007BFF; color:#fff; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; transition:all 0.2s;">Submit</button>
+  </form>
+</div>
   </div>
 
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Double Door</title>
+  <title>Submersible Panel</title>
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -14,6 +14,118 @@
   <link rel="stylesheet" href="../CSS/chat.css">
 
   <style>
+    /* 🌙 DARK + GOLD PREMIUM THEME */
+
+body.dark {
+  background: #0b0b0c; /* deep black */
+  color: #e5e5e5;
+}
+
+/* Headings */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #ffffff;
+}
+
+/* Cards / Sections */
+body.dark .product-info,
+body.dark .details,
+body.dark .reviews,
+body.dark .related,
+body.dark .form-container {
+  background: #151515;
+  color: #e5e5e5;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* Product Box */
+body.dark .box {
+  background: #181818;
+  border: 1px solid #2c2c2c;
+  transition: 0.3s;
+}
+
+/* 🔥 Hover = Glow Effect */
+body.dark .box:hover {
+  transform: translateY(-6px);
+  border-color: #f59e0b;
+  box-shadow: 0 0 20px rgba(245,158,11,0.3);
+}
+
+/* Product Name */
+body.dark .relatedproducts a p {
+  color: #f5f5f5;
+}
+
+/* Price (Golden Highlight) */
+body.dark .price {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+/* Stock */
+body.dark .stock {
+  color: #22c55e;
+}
+
+/* Buttons */
+body.dark button {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #000;
+  font-weight: 600;
+}
+
+body.dark button:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* Inputs */
+body.dark input,
+body.dark textarea {
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+body.dark input:focus,
+body.dark textarea:focus {
+  border-color: #f59e0b;
+}
+
+/* Table */
+body.dark table {
+  background: #151515;
+}
+
+body.dark th {
+  background: #222;
+}
+
+body.dark td {
+  border-color: #333;
+}
+
+/* Reviews */
+body.dark .reviews-card {
+  background: #1a1a1a;
+}
+
+/* Modal */
+body.dark .modal {
+  background: rgba(0,0,0,0.9);
+}
+
+/* Slider */
+body.dark .swiper-slide {
+  background: #000;
+}
+
+/* Links */
+body.dark a {
+  color: #f59e0b;
+}
     body {
       font-family: sans-serif;
       margin: 0;
@@ -43,7 +155,7 @@
 
     .swiper {
       width: 50%;
-      height: 600px;
+      height: 700px;
     }
 
     .swiper-slide {
@@ -55,7 +167,7 @@
 
     .swiper-slide img {
       width: 100%;
-      height: auto;
+      height: 700px;
       cursor: pointer;
       border-radius: 10px;
       transition: transform 0.3s;
@@ -640,10 +752,10 @@ button[type="submit"]:hover {
     <!-- Slider -->
     <div class="swiper main-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../IMAGES/items/10-way-double-door-mcb-box-500x500.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box-500x500 (1).jpg" alt="Slide 2">
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003149.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003156.jpg" alt="Slide 2">
         </div>
-        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box.jpg" alt="Slide 3"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003149.jpg" alt="Slide 3"></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
@@ -660,30 +772,50 @@ button[type="submit"]:hover {
         </div>
         <p class="price">₹1,499 <span class="old-price">₹2,999</span></p>
         <p class="stock">In Stock</p>
-        <button onclick="openForm()"
+           <button onclick="document.getElementById('enquiryModal').style.display = 'flex'"
           style="padding:10px 20px;background:#007BFF;color:white;border:none;border-radius:5px;">Enquiry</button>
 
-        <!-- Popup Form -->
-        <div id="enquiryForm"
-          style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;">
-         
+        <!-- 🔹 Modal Form Overlay -->
+        <div id="enquiryModal" class="modal" style="position:fixed; top:0; left:0; width:100%; height:100%; 
+            background:rgba(0,0,0,0.5); display:none; justify-content:center;  
+            align-items:center; z-index:1000;">
 
-      
-  <div id="enquiryModal" class="modal">
-    <form id="enquiryForm" class="form-container" action="http://127.0.0.1:5000/submit" method="POST">
-      <button type="button" class="close-btn" id="closeBtn"onclick="closeForm()">&times;</button>
-      <h2>Enquiry Form</h2>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="product" placeholder="Which Product?" required />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-          
+          <form action="https://api.web3forms.com/submit" method="POST" style="background-color:#fff; padding:20px; border:2px solid #007BFF;  
+               border-radius:8px; display:flex; flex-direction:column; gap:12px; 
+               width:90%; max-width:400px; min-width:250px; position:relative; 
+               box-sizing:border-box;">
+
+            <!-- 🔴 Close Button -->
+            <button type="button" id="closeBtn" style="position:absolute; top:10px; right:10px; 
+                   background:none; border:none; font-size:24px; cursor:pointer;">
+              &times;
+            </button>
+
+            <h2 style="text-align:center; margin-bottom:10px;">Enquiry Form</h2>
+
+            <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+            <input type="text" name="name" required placeholder="Your Name"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <input type="email" name="email" required placeholder="Your Email"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <input type="tel" name="phone" required placeholder="Your Phone Number"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px;">
+
+            <textarea name="message" required placeholder="Your Message" rows="2"
+              style="padding:10px; border:1px solid #ccc; border-radius:4px; font-size:16px; resize:vertical;"></textarea>
+
+            <button type="submit" style="padding:12px; background-color:#007BFF; color:white;        
+                   border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+              Submit Form
+            </button>
+
+          </form>
         </div>
 
-      </div>
+    
 
 
       <!-- Content -->
@@ -704,7 +836,7 @@ button[type="submit"]:hover {
       </div>
     </div>
   </div>
-
+  </div>
 
 
   <div class="scroll-container">
@@ -766,9 +898,9 @@ button[type="submit"]:hover {
     <div class="relatedproducts">
 
       <!-- Product 1 -->
-      <a href="mcb.html" style="text-decoration:none;color:black;text-align:center;">
-        <img src="../IMAGES/items/new/IMG_6622.JPG" alt="Headphone 1">
-        <p >MCBs</p>
+      <a href="double.html" style="text-decoration:none;color:black;text-align:center;">
+        <img src="../IMAGES/items/dd/file_00000000624c61f68b901de05fa08dfb.png" alt="Headphone 1">
+        <p>Mcb Box Doubledoor</p>
       </a>
 
       <!-- Product 2 -->
@@ -779,8 +911,8 @@ button[type="submit"]:hover {
 
       <!-- Product 3 -->
       <a href="changeover.html" style="text-decoration:none;color:black;text-align:center;">
-        <img src="../IMAGES/items/rewirable-switch-fuse-unit.jpg" alt="Headphone 3">
-        <p>MAINSWITCH</p>
+        <img src="../IMAGES/items/changover/Havron wireless enclosure with antenna.png" alt="Headphone 3">
+        <p>Changeover Switch</p>
       </a>
 
     </div>
@@ -794,10 +926,10 @@ button[type="submit"]:hover {
     <span class="popup-close" id="popupClose">&times;</span>
     <div class="swiper popup-slider">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../IMAGES/items/10-way-double-door-mcb-box-500x500.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box-500x500 (1).jpg" alt="Slide 2">
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003149.jpg" alt="Slide 1"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003156.jpg" alt="Slide 2">
         </div>
-        <div class="swiper-slide"><img src="../IMAGES/items/4-way-tpn-double-door-mcb-box.jpg" alt="Slide 3"></div>
+        <div class="swiper-slide"><img src="../IMAGES/items/PANEL/Screenshot_20251030_003149.jpg" alt="Slide 3"></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-prev"></div>
@@ -950,18 +1082,32 @@ button[type="submit"]:hover {
     </div>
   </div>
 
-  <!-- Enquiry panel -->
-  <div class="enquiry-panel" id="enquiryPanel">
-    <div class="head">Enquiry Form
-      <button class="enquiry-close" onclick="toggleEnquiry(false)">×</button>
+  <!-- 🔹 Enquiry Panel -->
+  <div id="enquiryPanel"
+    style="position:fixed; right:20px; bottom:96px; width:320px; max-width:calc(100% - 40px); border-radius:12px; background:#fff; color:#111; box-shadow:0 15px 40px rgba(0,0,0,0.25); z-index:999999; display:none; overflow:hidden; transition:all 0.3s ease;">
+
+    <div class="head"
+      style="padding:14px 16px; font-weight:600; font-size:16px; border-bottom:1px solid #e3e3e3; background:linear-gradient(90deg,#f8f8f8,#fdfdfd); display:flex; justify-content:space-between; align-items:center;">
+      Enquiry Form
+      <button onclick="toggleEnquiry(false)"
+        style="background:transparent; border:none; font-size:20px; color:#888; cursor:pointer; transition:color 0.2s;">×</button>
     </div>
 
-    <form id="enquiryForm" action="http://127.0.0.1:5000/submit" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="tel" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email (optional)" required />
-      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
-      <button type="submit">Send Enquiry</button>
+    <form id="enquiryForm" action="https://api.web3forms.com/submit" method="POST"
+      style="display:flex; flex-direction:column; gap:10px; padding:16px;">
+      <input type="hidden" name="access_key" value="640ae93f-ac1b-492d-a019-3e2c20b1f96d">
+
+      <input type="text" name="name" placeholder="Your Name" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="tel" name="phone" placeholder="Phone Number" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="email" name="email" placeholder="Email" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+      <input type="text" name="product" placeholder="Which Product?" required
+        style="padding:10px 12px; border:1px solid #ccc; border-radius:8px; font-size:14px; outline:none; background:#fff; color:#111;">
+
+      <button type="submit"
+        style="background:#007BFF; color:#fff; border:none; padding:12px; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; transition:all 0.2s;">Submit</button>
     </form>
   </div>
 
@@ -971,7 +1117,7 @@ button[type="submit"]:hover {
 <script src="../JS/chat.js"></script>
 <script src="../JS/footer.js"></script>
 <script src="../JS/header.js"></script>
-  <script>
+   <script>
     const mainSlider = new Swiper(".main-slider", {
       loop: true,
       spaceBetween: 10,
@@ -1040,36 +1186,23 @@ button[type="submit"]:hover {
     });
 
 
-    function openForm() {
-      document.getElementById('enquiryForm').style.display = 'block';
-    }
-    function closeForm() {
-      document.getElementById('enquiryForm').style.display = 'none';
-    }
-    function openForm() {
-      document.getElementById('enquiryForm').style.display = 'block';
-    }
-    function closeForm() {
-      document.getElementById('enquiryForm').style.display = 'none';
-    }
 
-    // Send data to Python backend
-    document.getElementById("formData").addEventListener("submit", function (e) {
-      e.preventDefault();
-      fetch("/submit_enquiry", {
-        method: "POST",
-        body: new FormData(this)
-      })
-        .then(res => res.text())
-        .then(data => {
-          alert(data);
-          closeForm();
-        });
+
+    const enquiryModal = document.getElementById('enquiryModal');
+    const closeBtn = document.getElementById('closeBtn');
+
+    closeBtn.addEventListener('click', () => {
+      enquiryModal.style.display = 'none';
     });
 
- 
-  </script>
+    // Close modal on clicking outside the form
+    window.addEventListener('click', (e) => {
+      if (e.target === enquiryModal) {
+        enquiryModal.style.display = 'none';
+      }
+    });
 
+  </script>
 </body>
 
 </html>

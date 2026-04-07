@@ -14,7 +14,7 @@ const messages = document.getElementById('messages');
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 const quickLinks = document.getElementById('quickLinks');
-const enquiryPanel = document.getElementById('enquiryPanel');
+
 const enquiryForm = document.getElementById('enquiryForm');
 
 let conversation = []; // {from: 'bot'|'user', text: '...' , t: timestamp}
@@ -228,3 +228,4 @@ document.addEventListener('keydown', (e)=>{
     toggleEnquiry(false);
   }
 });
+
